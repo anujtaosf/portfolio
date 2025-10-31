@@ -10,28 +10,55 @@ import WovenWindImage from "../assets/projects/wovenwind_1.png";
 import MPlanImage from "../assets/projects/mplan_1.png";
 import SafebitesImage from "../assets/projects/safebites_1.png";
 import BTSpeakerImage1 from "../assets/projects/btspeaker_1.png";
+import ShortbotImage from "../assets/projects/shortbot_1.jpg";
+import AutoPinArtImage from "../assets/projects/autopinart_1.JPG";
+import EMGCarImage from "../assets/projects/emgcar_1.png";
+import BallbotImage from "../assets/projects/ballbot_1.jpg";
+import InterfaceBoard1 from "../assets/projects/interfacebrd_1.jpg";
 
 function Home() {
   // Project mosaic data for background - expanded for full coverage
   const projectMosaicTiles = [
-    { image: LostFoundImage, color: '#00C6A7', title: 'LostandFound+' },
-    { image: WovenWindImage, color: '#10B981', title: 'Woven Wind' },
-    { image: MPlanImage, color: '#FFCB05', title: 'M-Plan' },
-    { image: BTSpeakerImage1, color: '#D2691E', title: 'Bluetooth Speaker' },
-    { image: SafebitesImage, color: '#FF7F50', title: 'Safebites' },
-    { image: LostFoundImage, color: '#00C6A7', title: 'LostandFound+' },
-    { image: WovenWindImage, color: '#10B981', title: 'Woven Wind' },
-    { image: MPlanImage, color: '#FFCB05', title: 'M-Plan' },
-    { image: BTSpeakerImage1, color: '#D2691E', title: 'Bluetooth Speaker' },
-    { image: SafebitesImage, color: '#FF7F50', title: 'Safebites' },
-    { image: LostFoundImage, color: '#00C6A7', title: 'LostandFound+' },
-    { image: WovenWindImage, color: '#10B981', title: 'Woven Wind' },
-    { image: MPlanImage, color: '#FFCB05', title: 'M-Plan' },
-    { image: BTSpeakerImage1, color: '#D2691E', title: 'Bluetooth Speaker' },
-    { image: SafebitesImage, color: '#FF7F50', title: 'Safebites' },
-    { image: LostFoundImage, color: '#00C6A7', title: 'LostandFound+' },
-    { image: WovenWindImage, color: '#10B981', title: 'Woven Wind' },
-    { image: MPlanImage, color: '#FFCB05', title: 'M-Plan' },
+    { image: LostFoundImage, color: "#00C6A7", title: "LostandFound+" },
+    { image: WovenWindImage, color: "#10B981", title: "Woven Wind" },
+    { image: MPlanImage, color: "#FFCB05", title: "M-Plan" },
+    { image: BTSpeakerImage1, color: "#D2691E", title: "Bluetooth Speaker" },
+    { image: SafebitesImage, color: "#FF7F50", title: "Safebites" },
+    { image: ShortbotImage, color: "#9333EA", title: "Shortbot" },
+    { image: AutoPinArtImage, color: "#EF4444", title: "Automatic Pin Art" },
+    { image: EMGCarImage, color: "#3B82F6", title: "EMG Car" },
+    { image: BallbotImage, color: "#F97316", title: "Ball-bot" },
+    { image: InterfaceBoard1, color: "#06B6D4", title: "RPi Interface Board" },
+    { image: MPlanImage, color: "#FFCB05", title: "M-Plan" },
+    { image: SafebitesImage, color: "#FF7F50", title: "Safebites" },
+    { image: WovenWindImage, color: "#10B981", title: "Woven Wind" },
+    { image: AutoPinArtImage, color: "#EF4444", title: "Automatic Pin Art" },
+    { image: BallbotImage, color: "#F97316", title: "Ball-bot" },
+    { image: LostFoundImage, color: "#00C6A7", title: "LostandFound+" },
+    { image: EMGCarImage, color: "#3B82F6", title: "EMG Car" },
+    { image: InterfaceBoard1, color: "#06B6D4", title: "RPi Interface Board" },
+    { image: BTSpeakerImage1, color: "#D2691E", title: "Bluetooth Speaker" },
+    { image: ShortbotImage, color: "#9333EA", title: "Shortbot" },
+    { image: WovenWindImage, color: "#10B981", title: "Woven Wind" },
+    { image: MPlanImage, color: "#FFCB05", title: "M-Plan" },
+    { image: LostFoundImage, color: "#00C6A7", title: "LostandFound+" },
+    { image: SafebitesImage, color: "#FF7F50", title: "Safebites" },
+    { image: BallbotImage, color: "#F97316", title: "Ball-bot" },
+    { image: AutoPinArtImage, color: "#EF4444", title: "Automatic Pin Art" },
+    { image: BTSpeakerImage1, color: "#D2691E", title: "Bluetooth Speaker" },
+    { image: EMGCarImage, color: "#3B82F6", title: "EMG Car" },
+    { image: InterfaceBoard1, color: "#06B6D4", title: "RPi Interface Board" },
+    { image: ShortbotImage, color: "#9333EA", title: "Shortbot" },
+    { image: SafebitesImage, color: "#FF7F50", title: "Safebites" },
+    { image: WovenWindImage, color: "#10B981", title: "Woven Wind" },
+    { image: LostFoundImage, color: "#00C6A7", title: "LostandFound+" },
+    { image: BallbotImage, color: "#F97316", title: "Ball-bot" },
+    { image: MPlanImage, color: "#FFCB05", title: "M-Plan" },
+    { image: AutoPinArtImage, color: "#EF4444", title: "Automatic Pin Art" },
+    { image: EMGCarImage, color: "#3B82F6", title: "EMG Car" },
+    { image: InterfaceBoard1, color: "#06B6D4", title: "RPi Interface Board" },
+    { image: BTSpeakerImage1, color: "#D2691E", title: "Bluetooth Speaker" },
+    { image: ShortbotImage, color: "#9333EA", title: "Shortbot" },
   ];
 
   const containerVariants = {
@@ -93,7 +120,7 @@ function Home() {
                 style={{
                   display: "flex",
                   justifyContent: "center",
-                  position: "relative"
+                  position: "relative",
                 }}
               >
                 {/* Portrait with hover interaction and glow */}
@@ -105,15 +132,16 @@ function Home() {
                   }}
                   transition={{
                     duration: 0.3,
-                    ease: "easeOut"
+                    ease: "easeOut",
                   }}
                   style={{
                     maxWidth: "450px",
                     width: "100%",
                     height: "auto",
-                    filter: "drop-shadow(0 0 60px rgba(0,198,167,0.4)) drop-shadow(0 0 80px rgba(255,127,80,0.3))",
+                    filter:
+                      "drop-shadow(0 0 60px rgba(0,198,167,0.4)) drop-shadow(0 0 80px rgba(255,127,80,0.3))",
                     position: "relative",
-                    borderRadius: "var(--radius-lg)"
+                    borderRadius: "var(--radius-lg)",
                   }}
                 />
               </motion.div>
@@ -250,24 +278,23 @@ function Home() {
               >
                 <p style={{ marginBottom: "var(--spacing-lg)" }}>
                   Growing up in San Francisco, I got my first engineering job at
-                  a startup developing "wood without trees" while working as a
-                  server at a family-owned restaurant. Balancing these two jobs,
-                  I began to feel a disconnect: the technical solutions I was
-                  creating didn't align with the communities I wanted to impact.
-                  While my coworkers at the restaurant worked tirelessly to
-                  support their families, the startup was benefitting automotive
-                  and furniture enterprises. This contrast inspired me to focus
-                  on building technologies that serve the people who need them
-                  most.
+                  a startup developing "wood without trees" while simultaneously
+                  working as a server at a family-owned restaurant in my
+                  neighborhood. Balancing these two jobs, I began to feel a
+                  disconnect: the technical solutions I was creating didn't
+                  align with the communities I wanted to impact. While my
+                  coworkers at the restaurant worked tirelessly to support their
+                  families, the startup was benefitting automotive and furniture
+                  enterprises. This contrast inspired me to focus on building
+                  technologies that serve the people who need them most.
                 </p>
 
                 <p>
                   I've collaborated with food service workers, university
                   nurses, facilities staff, elementary school teachers, and lab
-                  technicians. Currently, I'm working with motorized prosthetics
-                  through the Neurobionics Lab, while leading a team of 30
-                  engineers to promote renewable energy education in underserved
-                  communities.
+                  technicians. Currently, I'm working with the Neurobionics Lab
+                  at U-M to build an active lower limb prosthetic leg that will
+                  serve individuals with amputated limbs.
                 </p>
               </div>
             </motion.div>
@@ -281,9 +308,10 @@ function Home() {
             background: "var(--bg-secondary)",
             position: "relative",
             overflow: "hidden",
-            minHeight: "100vh",
-            paddingBottom: "var(--spacing-2xl)",
-            marginBottom: 0
+            minHeight: "auto",
+            paddingTop: "var(--spacing-lg)",
+            paddingBottom: "var(--spacing-lg)",
+            marginBottom: 0,
           }}
         >
           {/* Animated Mosaic Background */}
@@ -311,12 +339,15 @@ function Home() {
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(12, 300px)",
-                gridAutoRows: "250px",
-                gap: "1rem",
+                gridTemplateRows: "repeat(2, 150px)",
+                /* Ensure any implicit rows created by extra tiles keep the same fixed height */
+                gridAutoRows: "150px",
+                gap: "0.8rem",
                 width: "200%",
-                height: "100%",
-                paddingTop: "2rem",
-                paddingBottom: "2rem",
+                paddingTop: "0",
+                paddingBottom: "0",
+                alignItems: "stretch",
+                boxSizing: "border-box",
               }}
             >
               {/* First set of tiles */}
@@ -335,6 +366,9 @@ function Home() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    /* make padding part of the wrapper so images fill cell height consistently */
+                    padding: "1rem",
+                    boxSizing: "border-box",
                   }}
                 >
                   <img
@@ -345,7 +379,9 @@ function Home() {
                       height: "100%",
                       objectFit: "contain",
                       filter: "brightness(0.6)",
-                      padding: "1rem",
+                      /* padding moved to wrapper to prevent implicit row stretching */
+                      padding: 0,
+                      boxSizing: "border-box",
                     }}
                   />
                   <div
@@ -377,6 +413,8 @@ function Home() {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
+                    padding: "1rem",
+                    boxSizing: "border-box",
                   }}
                 >
                   <img
@@ -387,7 +425,8 @@ function Home() {
                       height: "100%",
                       objectFit: "contain",
                       filter: "brightness(0.6)",
-                      padding: "1rem",
+                      padding: 0,
+                      boxSizing: "border-box",
                     }}
                   />
                   <div
@@ -414,13 +453,21 @@ function Home() {
               left: 0,
               right: 0,
               bottom: 0,
-              background: "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8))",
+              background:
+                "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8))",
               zIndex: 1,
             }}
           />
 
           {/* Content Overlay */}
-          <div className="container" style={{ position: "relative", zIndex: 2, paddingBottom: "var(--spacing-4xl)" }}>
+          <div
+            className="container"
+            style={{
+              position: "relative",
+              zIndex: 2,
+              paddingBottom: "var(--spacing-4xl)",
+            }}
+          >
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -441,41 +488,52 @@ function Home() {
             <div className="grid-auto">
               {[
                 {
-                  icon: "💻",
-                  title: "Development",
-                  desc: "Building modern applications with robust design systems",
+                  icon: "🤖",
+                  title: "Robotics",
+                  desc: "Building intelligent systems that interact with the physical world",
+                  link: "/projects?filter=robotics",
+                },
+                {
+                  icon: "⚙️",
+                  title: "Hardware",
+                  desc: "Designing and fabricating circuit boards and embedded systems",
+                  link: "/projects?filter=hardware",
                 },
                 {
                   icon: "🎨",
                   title: "Design",
-                  desc: "Crafting intuitive, human-centered interfaces",
-                },
-                {
-                  icon: "🚀",
-                  title: "Innovation",
-                  desc: "Exploring new tools and technologies to push creativity forward",
+                  desc: "Crafting intuitive, human-centered interfaces and experiences",
+                  link: "/projects?filter=design",
                 },
               ].map((item, index) => (
-                <motion.div
+                <Link
+                  to={item.link}
                   key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.2 }}
-                  whileHover={{
-                    y: -5,
-                    boxShadow: "0 0 30px rgba(0,198,167,0.3)"
-                  }}
-                  style={{
-                    textAlign: "center",
-                    cursor: "pointer",
-                    background: "rgba(255,255,255,0.1)",
-                    backdropFilter: "blur(12px)",
-                    border: "1px solid rgba(255,255,255,0.15)",
-                    borderRadius: "1rem",
-                    padding: "var(--spacing-xl)",
-                  }}
+                  style={{ textDecoration: "none", color: "inherit" }}
                 >
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    whileHover={{
+                      y: -5,
+                      boxShadow: "0 0 30px rgba(0,198,167,0.3)",
+                    }}
+                    style={{
+                      textAlign: "center",
+                      cursor: "pointer",
+                      background: "rgba(255,255,255,0.1)",
+                      backdropFilter: "blur(12px)",
+                      border: "1px solid rgba(255,255,255,0.15)",
+                      borderRadius: "1rem",
+                      padding: "var(--spacing-xl)",
+                      height: "320px",
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "center",
+                    }}
+                  >
                   <div
                     style={{
                       fontSize: "var(--text-6xl)",
@@ -492,10 +550,9 @@ function Home() {
                   >
                     {item.title}
                   </h3>
-                  <p style={{ color: "rgba(255,255,255,0.9)" }}>
-                    {item.desc}
-                  </p>
+                  <p style={{ color: "rgba(255,255,255,0.9)" }}>{item.desc}</p>
                 </motion.div>
+                </Link>
               ))}
             </div>
 
@@ -544,7 +601,7 @@ function Home() {
                   style={{
                     fontSize: "var(--text-lg)",
                     color: "var(--accent-coral)",
-                    lineHeight: "1.5"
+                    lineHeight: "1.5",
                   }}
                 >
                   →

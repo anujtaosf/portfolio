@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import ThemeToggle from './ThemeToggle';
 
 function Navbar() {
   const location = useLocation();
@@ -28,7 +27,6 @@ function Navbar() {
           <Link to="/hobbies" className={`navbar-link ${isActive('/hobbies')}`}>
             Hobbies
           </Link>
-          <ThemeToggle />
         </div>
       </div>
     </nav>

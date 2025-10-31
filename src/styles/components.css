@@ -126,7 +126,7 @@ body.dark-mode .footer {
 .card {
   background-color: var(--bg-secondary);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-md);
+  box-shadow: none;
   overflow: hidden;
   transition: all var(--transition-base);
   position: relative;
@@ -155,7 +155,7 @@ body.dark-mode .card {
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: var(--shadow-xl);
+  box-shadow: none;
 }
 
 .card:hover::before {
@@ -164,29 +164,63 @@ body.dark-mode .card {
 
 .card-image {
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
   transition: transform var(--transition-slow);
+  filter: brightness(0.95);
 }
 
 .card:hover .card-image {
   transform: scale(1.05);
+  filter: brightness(1);
+}
+
+/* Thumbnail grid for multi-image cards */
+.thumbnail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  background: var(--bg-primary);
+  gap: 2px;
+}
+
+body.dark-mode .thumbnail-grid {
+  background: var(--dark-bg-primary);
+}
+
+.thumbnail-grid img {
+  width: 100%;
+  height: 100%;
+  /* Use cover to fill the thumbnail space */
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--transition-slow);
+  filter: brightness(0.95);
+}
+
+.thumbnail-grid img:hover {
+  transform: scale(1.05);
+  filter: brightness(1);
 }
 
 .card-content {
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md);
   flex: 1;
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-xs);
 }
 
 .card-title {
-  font-size: var(--text-2xl);
+  font-size: var(--text-xl);
   font-weight: 700;
   font-family: var(--font-heading);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
   color: var(--accent-coral);
   transition: color var(--transition-fast);
+  line-height: 1.3;
 }
 
 body.dark-mode .card-title {
@@ -199,8 +233,13 @@ body.dark-mode .card-title {
 
 .card-description {
   color: var(--text-secondary);
-  margin-bottom: var(--spacing-md);
-  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
+  font-size: var(--text-sm);
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 body.dark-mode .card-description {
@@ -241,17 +280,30 @@ body.dark-mode .card-description {
 /* Projects Grid - Mosaic Layout */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   grid-auto-rows: 280px;
-  gap: 1.5rem;
-  width: 100%;
   grid-auto-flow: dense;
+  gap: 1.2rem;
+  align-items: stretch;
 }
 
 /* Grid Span Classes */
 .project-grid-item {
-  width: 100%;
-  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-grid-item:hover {
+  transform: translateY(-4px);
+}
+
+.grid-span-small {
+  grid-row: span 1;
+}
+
+.grid-span-medium {
+  grid-row: span 2;
 }
 
 .grid-span-large {
@@ -259,46 +311,26 @@ body.dark-mode .card-description {
   grid-column: span 2;
 }
 
-.grid-span-tall {
-  grid-row: span 2;
-  grid-column: span 1;
-}
-
-.grid-span-medium {
-  grid-row: span 1;
-  grid-column: span 1;
-}
-
-.grid-span-small {
-  grid-row: span 1;
-  grid-column: span 1;
-}
-
 /* Responsive Adjustments */
 @media (max-width: 1200px) {
   .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  }
-
-  .grid-span-large {
-    grid-column: span 2;
-    grid-row: span 2;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-auto-rows: 230px;
   }
 }
 
 @media (max-width: 900px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 260px;
+    grid-auto-rows: 220px;
   }
 
   .grid-span-large {
     grid-column: span 2;
-    grid-row: span 2;
   }
 
-  .grid-span-tall {
-    grid-row: span 2;
+  .projects-grid .project-grid-item:nth-child(5n) {
+    grid-column: span 1;
   }
 }
 
@@ -309,9 +341,14 @@ body.dark-mode .card-description {
   }
 
   .grid-span-large,
-  .grid-span-tall,
   .grid-span-medium,
   .grid-span-small {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+  }
+
+  .projects-grid .project-grid-item:nth-child(3n),
+  .projects-grid .project-grid-item:nth-child(5n) {
     grid-column: span 1;
     grid-row: span 1;
   }

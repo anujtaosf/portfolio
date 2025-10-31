@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f17f6e31.css",
+    "main.js": "/static/js/main.5990d979.js",
+    "static/js/453.5fbf7527.chunk.js": "/static/js/453.5fbf7527.chunk.js",
+    "static/media/ballbot_vid.mov": "/static/media/ballbot_vid.03c43d78dc63b659f887.mov",
+    "static/media/autopinart_vid.MOV": "/static/media/autopinart_vid.3e31acaf2ff2b7981c6a.MOV",
+    "static/media/wovenwind_vid.MOV": "/static/media/wovenwind_vid.7871df88ed162d83de89.MOV",
+    "static/media/lostfound_1.png": "/static/media/lostfound_1.9bb7aeed978ba34ec335.png",
+    "static/media/autopinart_3.jpg": "/static/media/autopinart_3.b578788f0c356af06316.jpg",
+    "static/media/wovenwind_3.jpg": "/static/media/wovenwind_3.7948d0e274631607ad74.jpg",
+    "static/media/shortbot_1.jpg": "/static/media/shortbot_1.21b09e12afa8a866d05d.jpg",
+    "static/media/autopinart_1.JPG": "/static/media/autopinart_1.e1fcb04644c8803e7632.JPG",
+    "static/media/emgcar_2.png": "/static/media/emgcar_2.cd567dcffecb9c2e7e69.png",
+    "static/media/interfacebrd_2.jpg": "/static/media/interfacebrd_2.8c6faa0469894e97ca17.jpg",
+    "static/media/btspeaker_2.png": "/static/media/btspeaker_2.fbf731d5821b4414060d.png",
+    "static/media/autopinart_2.jpg": "/static/media/autopinart_2.e8df8a30160abbf33c43.jpg",
+    "static/media/btspeaker_3.png": "/static/media/btspeaker_3.d053999f564a2468e74a.png",
+    "static/media/emgcar_3.png": "/static/media/emgcar_3.2c5f2b2bbcde1d7bbb1a.png",
+    "static/media/emgcar_1.png": "/static/media/emgcar_1.72af8141b6e37cd4c7b8.png",
+    "static/media/wovenwind_1.png": "/static/media/wovenwind_1.5fd04796c11f4eecd07f.png",
+    "static/media/interfacebrd_1.jpg": "/static/media/interfacebrd_1.d092d1aac0ccf93d99e9.jpg",
+    "static/media/ballbot_1.jpg": "/static/media/ballbot_1.2a076ea683a8568a59d5.jpg",
+    "static/media/btspeaker_1.png": "/static/media/btspeaker_1.2db09e4fbf4e29a758de.png",
+    "static/media/profile_pic_oval.png": "/static/media/profile_pic_oval.b31ff3482e7ea7d3786e.png",
+    "static/media/safebites_1.png": "/static/media/safebites_1.9a6a74d84a49e93a9891.png",
+    "static/media/mplan_1.png": "/static/media/mplan_1.ab275b91ce2c0bebc30a.png",
+    "static/media/Mrobotics_logo.jpg": "/static/media/Mrobotics_logo.ec01115d705af788babb.jpg",
+    "static/media/Intel_logo.png": "/static/media/Intel_logo.be313d639c9a677c07a0.png",
+    "static/media/Lingrove_logo.png": "/static/media/Lingrove_logo.fb111f847e261b2ac9ad.png",
+    "static/media/Neuro_logo.svg": "/static/media/Neuro_logo.1a46b07bcd5bac2f71285714ed8a97f6.svg",
+    "index.html": "/index.html",
+    "main.f17f6e31.css.map": "/static/css/main.f17f6e31.css.map",
+    "main.5990d979.js.map": "/static/js/main.5990d979.js.map",
+    "453.5fbf7527.chunk.js.map": "/static/js/453.5fbf7527.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f17f6e31.css",
+    "static/js/main.5990d979.js"
+  ]
+}

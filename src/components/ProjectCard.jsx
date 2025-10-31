@@ -5,6 +5,7 @@ function ProjectCard({
   title,
   description,
   image,
+  thumbnailImages,
   additionalImages,
   video,
   tags,
@@ -14,34 +15,67 @@ function ProjectCard({
   role,
   motivation,
   stage,
-  color = '#00C6A7'
+  color = '#00C6A7',
+  imageDescriptions
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const hasDetails = timeline || role || motivation || stage;
+
+  const handleCardClick = () => {
+    if (hasDetails) {
+      setIsExpanded(true);
+    } else if (link && link !== '#') {
+      window.open(link, '_blank', 'noopener,noreferrer');
+    }
+  };
 
   return (
     <>
       <motion.div
         className="card"
         whileHover={{ y: -5 }}
-        onClick={() => hasDetails && setIsExpanded(true)}
-        style={{ cursor: hasDetails ? 'pointer' : 'default' }}
+        onClick={handleCardClick}
+        style={{ cursor: (hasDetails || (link && link !== '#')) ? 'pointer' : 'default' }}
       >
-        {image && (
-          <div style={{ position: 'relative', overflow: 'hidden', borderRadius: 'var(--radius-md) var(--radius-md) 0 0' }}>
+        {thumbnailImages && thumbnailImages.length > 0 ? (
+          thumbnailImages.length === 1 ? (
+            <div style={{
+              position: 'relative',
+              overflow: 'hidden',
+              borderRadius: 'var(--radius-md) var(--radius-md) 0 0',
+              height: '180px'
+            }}>
+              <img
+                src={thumbnailImages[0]}
+                alt={title}
+                className="card-image"
+              />
+            </div>
+          ) : (
+            <div className="thumbnail-grid" style={{ height: '180px' }}>
+              {thumbnailImages.slice(0, 2).map((img, idx) => (
+                <img
+                  key={idx}
+                  src={img}
+                  alt={`${title} ${idx + 1}`}
+                />
+              ))}
+            </div>
+          )
+        ) : image ? (
+          <div style={{
+            position: 'relative',
+            overflow: 'hidden',
+            borderRadius: 'var(--radius-md) var(--radius-md) 0 0',
+            height: '180px'
+          }}>
             <img
               src={image}
               alt={title}
               className="card-image"
-              style={{
-                width: '100%',
-                height: '250px',
-                objectFit: 'cover',
-                display: 'block'
-              }}
             />
           </div>
-        )}
+        ) : null}
         <div className="card-content">
           <h3 className="card-title" style={{ color }}>{title}</h3>
           <p className="card-description">{description}</p>
@@ -64,17 +98,6 @@ function ProjectCard({
                   {tag}
                 </motion.span>
               ))}
-            </div>
-          )}
-          {hasDetails && (
-            <div style={{
-              marginTop: 'var(--spacing-sm)',
-              padding: 'var(--spacing-xs) 0',
-              textAlign: 'center',
-              fontSize: 'var(--text-xs)',
-              color: 'var(--text-secondary)'
-            }}>
-              Click to see details
             </div>
           )}
         </div>
@@ -244,24 +267,41 @@ function ProjectCard({
                   {additionalImages && additionalImages.length > 0 && (
                     <div style={{
                       marginBottom: 'var(--spacing-lg)',
-                      display: 'grid',
-                      gridTemplateColumns: 'repeat(2, 1fr)',
-                      gap: 'var(--spacing-md)'
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: 'var(--spacing-lg)'
                     }}>
                       {additionalImages.map((img, idx) => (
                         <div key={idx} style={{
-                          borderRadius: 'var(--radius-md)',
-                          overflow: 'hidden'
+                          display: 'flex',
+                          gap: 'var(--spacing-lg)',
+                          alignItems: 'center'
                         }}>
-                          <img
-                            src={img}
-                            alt={`${title} ${idx + 2}`}
-                            style={{
-                              width: '100%',
-                              height: 'auto',
-                              display: 'block'
-                            }}
-                          />
+                          {imageDescriptions && imageDescriptions[`image${idx + 2}`] && (
+                            <div style={{
+                              flex: '1',
+                              fontSize: 'var(--text-base)',
+                              color: 'var(--text-secondary)'
+                            }}>
+                              {imageDescriptions[`image${idx + 2}`]}
+                            </div>
+                          )}
+                          <div style={{
+                            borderRadius: 'var(--radius-md)',
+                            overflow: 'hidden',
+                            maxWidth: '400px',
+                            flex: imageDescriptions && imageDescriptions[`image${idx + 2}`] ? '0 0 400px' : '1'
+                          }}>
+                            <img
+                              src={img}
+                              alt={`${title} ${idx + 2}`}
+                              style={{
+                                width: '100%',
+                                height: 'auto',
+                                display: 'block'
+                              }}
+                            />
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -280,7 +320,7 @@ function ProjectCard({
                         fontSize: 'var(--text-base)',
                         color: 'var(--text-secondary)'
                       }}>
-                        Completed wind turbine
+                        {imageDescriptions && imageDescriptions.video ? imageDescriptions.video : 'Completed wind turbine'}
                       </div>
                       <div style={{
                         borderRadius: 'var(--radius-md)',
