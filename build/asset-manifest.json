@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.2cc7021f.css",
-    "main.js": "/portfolio/static/js/main.9ded640b.js",
+    "main.css": "/portfolio/static/css/main.e6c13ad2.css",
+    "main.js": "/portfolio/static/js/main.15b7cab2.js",
     "static/js/453.5fbf7527.chunk.js": "/portfolio/static/js/453.5fbf7527.chunk.js",
     "static/media/ballbot_vid.mov": "/portfolio/static/media/ballbot_vid.03c43d78dc63b659f887.mov",
     "static/media/autopinart_vid.MOV": "/portfolio/static/media/autopinart_vid.3e31acaf2ff2b7981c6a.MOV",
@@ -30,12 +30,12 @@
     "static/media/Lingrove_logo.png": "/portfolio/static/media/Lingrove_logo.fb111f847e261b2ac9ad.png",
     "static/media/Neuro_logo.svg": "/portfolio/static/media/Neuro_logo.1a46b07bcd5bac2f71285714ed8a97f6.svg",
     "index.html": "/portfolio/index.html",
-    "main.2cc7021f.css.map": "/portfolio/static/css/main.2cc7021f.css.map",
-    "main.9ded640b.js.map": "/portfolio/static/js/main.9ded640b.js.map",
+    "main.e6c13ad2.css.map": "/portfolio/static/css/main.e6c13ad2.css.map",
+    "main.15b7cab2.js.map": "/portfolio/static/js/main.15b7cab2.js.map",
     "453.5fbf7527.chunk.js.map": "/portfolio/static/js/453.5fbf7527.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2cc7021f.css",
-    "static/js/main.9ded640b.js"
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.15b7cab2.js"
   ]
 }
