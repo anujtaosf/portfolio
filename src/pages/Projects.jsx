@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
+import { FaWrench, FaClipboardList, FaCheckSquare } from 'react-icons/fa';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SectionTitle from '../components/SectionTitle';
@@ -209,7 +210,7 @@ function Projects() {
       additionalImages: [EMGCarImage2, EMGCarImage3],
       imageDescriptions: {
         image2: 'Close-up of the EMG circuit board showing the sensor connections and components',
-        image3: 'Testing the EMG-controlled car with muscle signals - successfully driving the robot!'
+        image3: 'Testing the EMG-controlled car with muscle signals to successfully driving the robot!'
       },
       tags: ['Circuit Design', 'Serial Communication'],
       category: 'robotics',
@@ -401,19 +402,19 @@ function Projects() {
                         quote={
                           <div>
                             <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--spacing-md)', marginBottom: 'var(--spacing-md)' }}>
-                              <div style={{ fontSize: '36px', minWidth: '50px' }}>🔧</div>
+                              <div style={{ fontSize: '36px', minWidth: '50px', color: '#00C6A7' }}><FaWrench /></div>
                               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--line-height-relaxed)', margin: 0 }}>
                                 Communal items don't come back, are returned broken, or just cannot be found
                               </p>
                             </div>
                             <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--spacing-md)', marginBottom: 'var(--spacing-md)' }}>
-                              <div style={{ fontSize: '36px', minWidth: '50px' }}>📝</div>
+                              <div style={{ fontSize: '36px', minWidth: '50px', color: '#00C6A7' }}><FaClipboardList /></div>
                               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--line-height-relaxed)', margin: 0 }}>
                                 It's 2024 and the University is still using paper systems
                               </p>
                             </div>
                             <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--spacing-md)' }}>
-                              <div style={{ fontSize: '36px', minWidth: '50px' }}>✅</div>
+                              <div style={{ fontSize: '36px', minWidth: '50px', color: '#00C6A7' }}><FaCheckSquare /></div>
                               <p style={{ fontSize: 'var(--text-base)', lineHeight: 'var(--line-height-relaxed)', margin: 0 }}>
                                 I need a system to hold students accountable for returning tools
                               </p>
@@ -657,7 +658,7 @@ function Projects() {
                         </div>
 
                         <p style={{ color: 'var(--text-primary)', maxWidth: '900px', marginBottom: 'var(--spacing-l)' }}>
-                          The tool-tracking platform is now deployed in 2 makerspaces on campus with regular communication and improvements being made as it gets more use!
+                          LostFound+ is now deployed in 2 makerspaces on campus with regular communication and improvements being made as it gets more use!
                         </p>
                       </div>
                     </CaseStudyCard>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
@@ -6,29 +6,6 @@ import Footer from "../components/Footer";
 import ProfilePic from "../assets/portraits/profile_pic_oval.png";
 
 function Home() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Create mailto link with form data
-    const mailtoLink = `mailto:anuhea@umich.edu?subject=Contact from ${
-      formData.name
-    }&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-    window.location.href = mailtoLink;
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -206,8 +183,7 @@ function Home() {
                   disconnect: the technical solutions I was creating didn't
                   align with the communities I wanted to impact. While I watched
                   my coworkers at the restaurant work tirelessly to support
-                  their families, the startup was creating technology that
-                  served luxury automotive and furniture companies. This
+                  their families, the startup was creating technology for luxury automotive and furniture companies. This
                   contrast inspired me to focus on building technologies that
                   serve the people who need them most.
                 </p>
@@ -218,179 +194,13 @@ function Home() {
                   nonprofit boards, and lab technicians. Currently, I'm working
                   with the Neurobionics Lab at U-M to build a robotic lower limb
                   prosthetic leg that will serve individuals with amputated
-                  limbs.
+                  limbs. I work on the hardware and electrical system for the leg, designing a high speed PCB to connect all of our sensors.
                 </p>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Contact Form Section */}
-        <section className="section" style={{ background: "#f5f5f5" }}>
-          <div className="container">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2
-                style={{
-                  textAlign: "center",
-                  marginBottom: "var(--spacing-2xl)",
-                  color: "var(--accent-coral)",
-                }}
-              >
-                Get In Touch
-              </h2>
-
-              <form
-                onSubmit={handleSubmit}
-                style={{
-                  maxWidth: "600px",
-                  margin: "0 auto",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "var(--spacing-lg)",
-                }}
-              >
-                <div>
-                  <label
-                    htmlFor="name"
-                    style={{
-                      display: "block",
-                      marginBottom: "var(--spacing-xs)",
-                      color: "var(--text-primary)",
-                      fontSize: "var(--text-sm)",
-                      fontWeight: "500",
-                    }}
-                  >
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    style={{
-                      width: "100%",
-                      padding: "var(--spacing-md)",
-                      borderRadius: "var(--radius-md)",
-                      border: "1px solid var(--border-color)",
-                      background: "#ffffff",
-                      color: "var(--text-primary)",
-                      fontSize: "var(--text-base)",
-                      outline: "none",
-                      transition: "border-color 0.3s",
-                    }}
-                    onFocus={(e) =>
-                      (e.target.style.borderColor = "var(--accent-teal)")
-                    }
-                    onBlur={(e) =>
-                      (e.target.style.borderColor = "var(--border-color)")
-                    }
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="email"
-                    style={{
-                      display: "block",
-                      marginBottom: "var(--spacing-xs)",
-                      color: "var(--text-primary)",
-                      fontSize: "var(--text-sm)",
-                      fontWeight: "500",
-                    }}
-                  >
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    style={{
-                      width: "100%",
-                      padding: "var(--spacing-md)",
-                      borderRadius: "var(--radius-md)",
-                      border: "1px solid var(--border-color)",
-                      background: "#ffffff",
-                      color: "var(--text-primary)",
-                      fontSize: "var(--text-base)",
-                      outline: "none",
-                      transition: "border-color 0.3s",
-                    }}
-                    onFocus={(e) =>
-                      (e.target.style.borderColor = "var(--accent-teal)")
-                    }
-                    onBlur={(e) =>
-                      (e.target.style.borderColor = "var(--border-color)")
-                    }
-                  />
-                </div>
-
-                <div>
-                  <label
-                    htmlFor="message"
-                    style={{
-                      display: "block",
-                      marginBottom: "var(--spacing-xs)",
-                      color: "var(--text-primary)",
-                      fontSize: "var(--text-sm)",
-                      fontWeight: "500",
-                    }}
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="5"
-                    style={{
-                      width: "100%",
-                      padding: "var(--spacing-md)",
-                      borderRadius: "var(--radius-md)",
-                      border: "1px solid var(--border-color)",
-                      background: "#ffffff",
-                      color: "var(--text-primary)",
-                      fontSize: "var(--text-base)",
-                      outline: "none",
-                      transition: "border-color 0.3s",
-                      resize: "vertical",
-                      fontFamily: "inherit",
-                    }}
-                    onFocus={(e) =>
-                      (e.target.style.borderColor = "var(--accent-teal)")
-                    }
-                    onBlur={(e) =>
-                      (e.target.style.borderColor = "var(--border-color)")
-                    }
-                  />
-                </div>
-
-                <motion.button
-                  type="submit"
-                  className="btn"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  style={{
-                    alignSelf: "flex-start",
-                  }}
-                >
-                  Send Message
-                </motion.button>
-              </form>
-            </motion.div>
-          </div>
-        </section>
       </main>
       <Footer />
     </>

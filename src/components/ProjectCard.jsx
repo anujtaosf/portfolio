@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { FaCalendar, FaUser } from 'react-icons/fa';
 
 function ProjectCard({
   title,
@@ -107,9 +108,12 @@ function ProjectCard({
               bottom: '8px',
               right: '8px',
               fontSize: '0.7rem',
-              color: 'var(--text-secondary)',
-              fontStyle: 'italic'
+              color: color,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px'
             }}>
+              <FaCalendar />
               {date}
             </div>
           )}
@@ -230,13 +234,15 @@ function ProjectCard({
                     marginBottom: 'var(--spacing-lg)'
                   }}>
                     {timeline && (
-                      <div>
-                        <strong style={{ color }}>Timeline:</strong> <span style={{ color: 'var(--text-secondary)' }}>{timeline}</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <FaCalendar style={{ color }} />
+                        <span style={{ color: 'var(--text-secondary)' }}>{timeline}</span>
                       </div>
                     )}
                     {role && (
-                      <div>
-                        <strong style={{ color }}>Role:</strong> <span style={{ color: 'var(--text-secondary)' }}>{role}</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <FaUser style={{ color }} />
+                        <span style={{ color: 'var(--text-secondary)' }}>{role}</span>
                       </div>
                     )}
                   </div>
