@@ -167,37 +167,6 @@ function Home() {
                 </motion.div>
               </motion.div>
             </div>
-
-            {/* Scroll indicator */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.5, duration: 1 }}
-              style={{
-                position: "absolute",
-                bottom: "var(--spacing-xl)",
-                left: "50%",
-                transform: "translateX(-50%)",
-                textAlign: "center",
-                color: "var(--neutral-light)",
-              }}
-            >
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ repeat: Infinity, duration: 1.5 }}
-                style={{ fontSize: "var(--text-3xl)" }}
-              >
-                ↓
-              </motion.div>
-              <p
-                style={{
-                  fontSize: "var(--text-sm)",
-                  marginTop: "var(--spacing-xs)",
-                }}
-              >
-                Scroll to explore
-              </p>
-            </motion.div>
           </div>
         </section>
 
