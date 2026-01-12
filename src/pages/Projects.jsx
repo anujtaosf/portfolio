@@ -66,7 +66,7 @@ function Projects() {
       github: null,
       color: '#06B6D4',
       gridSpan: 'medium', // 2x1 - expanded for better image display
-      date: 'Jan 2025 - Current'
+      date: 'May 2025 - Current'
     },
     {
       title: 'Short-bot: A robot for social navigation',
