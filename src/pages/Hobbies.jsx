@@ -1,43 +1,80 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import ScrollToTopButton from '../components/ScrollToTopButton';
-import SectionTitle from '../components/SectionTitle';
-import HobbyCard from '../components/HobbyCard';
+import React from "react";
+import { motion } from "framer-motion";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import SectionTitle from "../components/SectionTitle";
+import HobbyPostCard from "../components/HobbyPostCard";
+
+// Climbing images
+import Climb1 from "../assets/hobbies/climb1.JPG";
+import Climb2 from "../assets/hobbies/climb2.jpg";
+
+// Running and Triathlons images
+import Run1 from "../assets/hobbies/run1.jpg";
+import Run2 from "../assets/hobbies/run2.JPG";
+import Run3 from "../assets/hobbies/run3.JPG";
+import Run4 from "../assets/hobbies/run4.JPG";
+
+// Architecture images
+import Arch1 from "../assets/hobbies/arch1.png";
+import Arch2 from "../assets/hobbies/arch2.png";
+import Arch3 from "../assets/hobbies/arch3.png";
+import Arch4 from "../assets/hobbies/arch4.png";
+import Arch5 from "../assets/hobbies/arch5.png";
+import Arch6 from "../assets/hobbies/arch6.png";
+import Arch7 from "../assets/hobbies/arch7.png";
+import Arch8 from "../assets/hobbies/arch8.png";
+import Arch9 from "../assets/hobbies/arch9.png";
+import Arch10 from "../assets/hobbies/arch10.png";
+import Arch11 from "../assets/hobbies/arch11.png";
+
+// Tinkering images
+import Tinker1 from "../assets/hobbies/tinker1.png";
+import Tinker2 from "../assets/hobbies/tinker2.png";
+import TinkerMaking from "../assets/hobbies/hobbies_maker-ing.JPG";
+
+// Hiking images
+import Hike1 from "../assets/hobbies/hike1.jpg";
+import Hike2 from "../assets/hobbies/hike2.JPG";
 
 function Hobbies() {
-  // Sample hobby data - replace with your actual hobbies and images
+  // Sample hobby data with images array
   const hobbies = [
     {
-      title: 'Photography',
-      description: 'Capturing moments and exploring the world through the lens. I enjoy landscape and street photography, finding beauty in everyday moments.',
-      image: null // Add your image path here
+      title: "Running and Triathlons",
+      description:
+        "Always down to run a fun 5K with friends and I just ran my first triathlon in June of 2025! I loved it so much that I decided to compete for a 2nd time that summer.",
+      images: [Run3, Run1, Run2, Run4],
     },
     {
-      title: 'Hiking & Outdoors',
-      description: 'Exploring nature trails and enjoying the outdoors. There\'s nothing quite like reaching a mountain summit and taking in the view.',
-      image: null
+      title: "Architecture",
+      description:
+        "I'm passionate about architecture and learning about the infrastructure around me. Here are some of the projects I've worked on in class and on my own",
+      images: [
+        Arch2,
+        Arch1,
+        Arch3,
+        Arch4,
+        Arch5,
+        Arch6,
+        Arch7,
+        Arch8,
+        Arch9,
+        Arch10,
+        Arch11,
+      ],
     },
     {
-      title: 'Reading & Learning',
-      description: 'Getting lost in books, from technical documentation to fiction novels. Always learning something new and expanding my perspective.',
-      image: null
+      title: "Hiking and Outdoors",
+      description:
+        "From surfing to skiing to rock climbing, I've had some pretty great life highs! I have also had my knees and elbows beaten and bruised from my many falls 🫠",
+      images: [Hike1, Hike2, Climb1, Climb2],
     },
     {
-      title: 'Cooking & Baking',
-      description: 'Experimenting with new recipes and cuisines. The kitchen is my creative laboratory where I blend flavors and techniques.',
-      image: null
-    },
-    {
-      title: 'Sketching & Design',
-      description: 'Bringing ideas to life through sketches and designs. From architecture to product concepts, I love visualizing ideas on paper.',
-      image: null
-    },
-    {
-      title: 'Music',
-      description: 'Playing instruments and exploring different genres. Music is a universal language that helps me relax and express creativity.',
-      image: null
+      title: "Tinkering",
+      description:
+        "I enjoy making things for fun and as gifts for friends. I need to get better at documenting these creations, but here are some of my works so far with different mediums",
+      images: [Tinker1, Tinker2, TinkerMaking],
     }
   ];
 
@@ -65,7 +102,9 @@ function Hobbies() {
   return (
     <>
       <Navbar />
-      <main style={{ marginTop: '80px', minHeight: '100vh' }}>
+      <main
+        style={{ marginTop: "80px", minHeight: "100vh", paddingBottom: "40px" }}
+      >
         <section className="section">
           <div className="container">
             <motion.div
@@ -79,59 +118,23 @@ function Hobbies() {
               />
             </motion.div>
 
-            {/* Hobbies Grid with staggered animation */}
+            {/* Hobbies Feed with staggered animation */}
             <motion.div
-              className="grid-auto"
+              className="hobby-feed"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
             >
               {hobbies.map((hobby, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  whileHover={{ scale: 1.02 }}
-                >
-                  <HobbyCard {...hobby} />
+                <motion.div key={index} variants={itemVariants}>
+                  <HobbyPostCard {...hobby} />
                 </motion.div>
               ))}
-            </motion.div>
-
-            {/* Personal Note Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              style={{
-                marginTop: 'var(--spacing-3xl)',
-                textAlign: 'center',
-                padding: 'var(--spacing-xl)',
-                background: 'var(--gradient-subtle)',
-                borderRadius: 'var(--radius-lg)',
-                border: '1px solid var(--border-color)'
-              }}
-            >
-              <h3 style={{ color: 'var(--accent-coral)', marginBottom: 'var(--spacing-md)' }}>
-                Life Beyond Code
-              </h3>
-              <p style={{
-                maxWidth: '700px',
-                margin: '0 auto',
-                color: 'var(--text-secondary)',
-                lineHeight: 'var(--line-height-relaxed)'
-              }}>
-                I believe in maintaining a balance between work and play. These hobbies keep me
-                grounded, inspire creativity, and often provide unexpected insights that I bring
-                back to my technical work. Whether I'm in nature, in the kitchen, or with a good
-                book, I'm always learning and growing.
-              </p>
             </motion.div>
           </div>
         </section>
       </main>
       <Footer />
-      <ScrollToTopButton />
     </>
   );
 }

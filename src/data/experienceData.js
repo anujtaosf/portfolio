@@ -12,12 +12,26 @@ export const experience = [
     location: "Ann Arbor, MI",
     date: "Sept 2024 – Current",
     summary: [
-      "Developed and debugged a high-speed PCB for the Raspberry Pi Compute Module 5.",
-      "Contributed to firmware documentation and flashing scripts for Linux OS images.",
+      "Designed and tested a printed circuit board assembly that integrates multiple sensors into a motorized prosthetic leg, enabling reliable human studies by students in our lab and distributed to other research groups.",
+      "Integrated I2C, SPI, UART, and CAN interfaces to enable high-speed, reliable communication across the system.",
+      "Created a procedure to quantify audible noise in active prosthetic devices, enabling users to compare sound levels.",
     ],
     tools: ["PCB Design", "Embedded Systems", "C/C++", "Linux"],
     logo: NeuroLogo,
     color: "#00C6A7", // Teal accent
+  },
+  {
+    company: "U-M Robotics GSI",
+    role: "Teacher's Assistant",
+    location: "Ann Arbor, MI",
+    date: "January 2025 – May 2025",
+    summary: [
+      "Structured and facilitated seven labs for a newly developed course, collaborating with the professor to design effective learning approaches, writing and testing each lab, and guiding students through implementation and debugging.",
+      "Composed and lectured about serial communication and introductory embedded systems to provide students with a deeper understanding of how the sensors and microcontrollers communicate in their robots.",
+    ],
+    tools: ["Embedded Systems", "Teaching", "Arduino", "Serial Communication"],
+    logo: MakerspaceLogo,
+    color: "#F59E0B", // Amber/Orange
   },
   {
     company: "Intel",

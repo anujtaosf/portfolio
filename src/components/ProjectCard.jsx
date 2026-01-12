@@ -16,7 +16,8 @@ function ProjectCard({
   motivation,
   stage,
   color = '#00C6A7',
-  imageDescriptions
+  imageDescriptions,
+  date
 }) {
   const [isExpanded, setIsExpanded] = useState(false);
   const hasDetails = timeline || role || motivation || stage;
@@ -76,7 +77,7 @@ function ProjectCard({
             />
           </div>
         ) : null}
-        <div className="card-content">
+        <div className="card-content" style={{ position: 'relative' }}>
           <h3 className="card-title" style={{ color }}>{title}</h3>
           <p className="card-description">{description}</p>
           {tags && tags.length > 0 && (
@@ -98,6 +99,18 @@ function ProjectCard({
                   {tag}
                 </motion.span>
               ))}
+            </div>
+          )}
+          {date && (
+            <div style={{
+              position: 'absolute',
+              bottom: '8px',
+              right: '8px',
+              fontSize: '0.7rem',
+              color: 'var(--text-secondary)',
+              fontStyle: 'italic'
+            }}>
+              {date}
             </div>
           )}
         </div>

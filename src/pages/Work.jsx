@@ -21,6 +21,7 @@ function Work() {
             >
               <SectionTitle
                 title="Work Experience"
+                subtitle="Click any card to see details"
               />
             </motion.div>
 
@@ -40,38 +41,6 @@ function Work() {
                 <WorkExperienceCard key={index} data={exp} index={index} />
               ))}
             </div>
-
-            {/* Summary Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              style={{
-                marginTop: 'var(--spacing-3xl)',
-                textAlign: 'center',
-                padding: 'var(--spacing-xl)',
-                background: 'var(--gradient-subtle)',
-                borderRadius: 'var(--radius-lg)',
-                border: '1px solid var(--border-color)',
-              }}
-            >
-              <h3 style={{ color: 'var(--accent-coral)', marginBottom: 'var(--spacing-md)' }}>
-                What I Bring
-              </h3>
-              <p
-                style={{
-                  maxWidth: '700px',
-                  margin: '0 auto',
-                  color: 'var(--text-secondary)',
-                  lineHeight: 'var(--line-height-relaxed)',
-                }}
-              >
-                From hardware debugging to manufacturing innovation, I've gained hands-on experience
-                building systems that scale. I thrive in environments where technical precision meets
-                creative problem-solving, and I'm always eager to learn new technologies and approaches.
-              </p>
-            </motion.div>
           </div>
         </section>
       </main>

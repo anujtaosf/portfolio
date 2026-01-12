@@ -298,6 +298,10 @@ body.dark-mode .card-description {
   transform: translateY(-4px);
 }
 
+.grid {
+  grid-auto-rows: 240px;
+}
+
 .grid-span-small {
   grid-row: span 1;
 }
@@ -335,7 +339,7 @@ body.dark-mode .card-description {
 }
 
 @media (max-width: 600px) {
-  .projects-grid {
+  .grid {
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
   }
@@ -343,7 +347,6 @@ body.dark-mode .card-description {
   .grid-span-large,
   .grid-span-medium,
   .grid-span-small {
-    grid-column: span 1 !important;
     grid-row: span 1 !important;
   }
 
@@ -657,13 +660,6 @@ body.dark-mode .work-timeline-dot {
   background: var(--dark-bg-primary);
 }
 
-.work-timeline-dot div {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  /* background color is set inline per company */
-}
-
 /* Date Badges */
 .work-date-badge {
   position: absolute;
@@ -905,20 +901,7 @@ body.dark-mode .work-expand-hint {
 }
 
 body.dark-mode .work-modal-content {
-  background: var(--dark-bg-secondary);
-  border-color: var(--dark-border);
-}
-
-.work-modal-close {
-  position: absolute;
-  top: var(--spacing-md);
-  right: var(--spacing-md);
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-full);
-  background: var(--gradient-accent);
-  color: white;
-  border: none;
+  background: var(--dark-bg-none);
   font-size: var(--text-xl);
   cursor: pointer;
   display: flex;
@@ -1052,5 +1035,225 @@ body.dark-mode .work-modal-body ul li {
   .work-tool-tag {
     font-size: 0.65rem;
     padding: 4px 8px;
+  }
+}
+
+/* Hobbies: Instagram-style horizontal post */
+.hobby-feed {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.hobby-post {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--spacing-3xl);
+  align-items: center;
+
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+
+  transition: transform var(--transition-base);
+}
+
+body.dark-mode .hobby-post {
+  background: var(--dark-bg-secondary);
+  border-color: var(--dark-border);
+}
+
+.hobby-post:hover {
+  transform: translateY(-4px);
+}
+
+.hobby-post-title {
+  font-size: var(--text-4xl);
+  margin: 0 0 var(--spacing-sm) 0;
+  color: var(--text-primary);
+}
+
+body.dark-mode .hobby-post-title {
+  color: var(--dark-text-primary);
+}
+
+.hobby-post-desc {
+  font-size: var(--text-base);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+  max-width: 520px;
+}
+
+body.dark-mode .hobby-post-desc {
+  color: var(--dark-text-secondary);
+}
+
+/* Slideshow */
+.hobby-slideshow {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary);
+  box-shadow: var(--shadow-md);
+  z-index: 0;
+}
+
+body.dark-mode .hobby-slideshow {
+  border-color: var(--dark-border);
+  background: var(--dark-bg-primary);
+}
+
+/* New wrapper that holds both background + foreground */
+.hobby-slide {
+  position: relative;
+  width: 100%;
+  height: 360px; /* keep your consistent post height */
+  overflow: hidden;
+}
+
+/* Blurred background layer */
+.hobby-slide-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;      /* background can crop - it's just the fill */
+  background-position: center;
+  filter: blur(18px);
+  transform: scale(1.1);       /* prevent blur edges */
+  opacity: 0.55;
+}
+.hobby-slideshow { position: relative; z-index: 0; }
+
+.hobby-slide-bg { z-index: 0; }
+.hobby-slide-img {
+  z-index: 1;
+  transform: scale(1.08);
+  transition: transform var(--transition-base);
+}
+
+.hobby-dots { z-index: 6; pointer-events: auto; }
+.hobby-dot { pointer-events: auto; }
+
+@media (max-width: 900px) {
+  .hobby-slide,
+  .hobby-slide-placeholder {
+    height: 280px;
+  }
+}
+
+
+/* Foreground image is always fully visible */
+.hobby-slide-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;         /* KEY FIX: no cropping */
+  object-position: center;
+  display: block;
+}
+
+
+.hobby-slide-placeholder {
+  height: 360px;
+  display: grid;
+  place-items: center;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+}
+
+/* Nav buttons */
+.hobby-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-full);
+
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 5;
+
+  transition: all var(--transition-fast);
+}
+
+body.dark-mode .hobby-nav {
+  background: rgba(28, 28, 28, 0.75);
+  border-color: var(--dark-border);
+  color: var(--dark-text-primary);
+}
+
+.hobby-nav:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+.hobby-nav-left {
+  left: 14px;
+}
+
+.hobby-nav-right {
+  right: 14px;
+}
+
+/* Dots */
+.hobby-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hobby-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  z-index: 6;
+  pointer-events: auto;
+}
+
+.hobby-dot:hover {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.hobby-dot.active {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Mobile: stack like a post */
+@media (max-width: 900px) {
+  .hobby-post {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .hobby-post-title {
+    font-size: var(--text-3xl);
+  }
+
+  .hobby-slide-img,
+  .hobby-slide-placeholder {
+    height: 280px;
   }
 }

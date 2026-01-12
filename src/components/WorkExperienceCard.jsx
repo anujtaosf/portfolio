@@ -11,7 +11,6 @@ function WorkExperienceCard({ data, index }) {
       x: 0,
       transition: {
         duration: 0.6,
-        delay: index * 0.2,
       },
     },
   };
@@ -100,13 +99,6 @@ function WorkExperienceCard({ data, index }) {
               </motion.span>
             ))}
           </div>
-
-          {/* Expand Indicator */}
-          <div className="work-expand-hint">
-            <span style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)' }}>
-              Click to see details
-            </span>
-          </div>
         </motion.div>
       </motion.div>
 
@@ -163,19 +155,6 @@ function WorkExperienceCard({ data, index }) {
                     {tool}
                   </span>
                 ))}
-              </div>
-
-              {/* Placeholder for images/additional content */}
-              <div
-                style={{
-                  padding: 'var(--spacing-lg)',
-                  background: 'var(--gradient-subtle)',
-                  borderRadius: 'var(--radius-md)',
-                  textAlign: 'center',
-                  color: 'var(--text-secondary)',
-                }}
-              >
-                <p>📸 Add project images and testimonials here</p>
               </div>
             </div>
           </motion.div>

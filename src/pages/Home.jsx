@@ -1,66 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import ScrollToTopButton from "../components/ScrollToTopButton";
 import ProfilePic from "../assets/portraits/profile_pic_oval.png";
-import LostFoundImage from "../assets/projects/lostfound_1.png";
-import WovenWindImage from "../assets/projects/wovenwind_1.png";
-import MPlanImage from "../assets/projects/mplan_1.png";
-import SafebitesImage from "../assets/projects/safebites_1.png";
-import BTSpeakerImage1 from "../assets/projects/btspeaker_1.png";
-import ShortbotImage from "../assets/projects/shortbot_1.jpg";
-import AutoPinArtImage from "../assets/projects/autopinart_1.JPG";
-import EMGCarImage from "../assets/projects/emgcar_1.png";
-import BallbotImage from "../assets/projects/ballbot_1.jpg";
-import InterfaceBoard1 from "../assets/projects/interfacebrd_1.jpg";
 
 function Home() {
-  // Project mosaic data for background - expanded for full coverage
-  const projectMosaicTiles = [
-    { image: LostFoundImage, color: "#00C6A7", title: "LostandFound+" },
-    { image: WovenWindImage, color: "#10B981", title: "Woven Wind" },
-    { image: MPlanImage, color: "#FFCB05", title: "M-Plan" },
-    { image: BTSpeakerImage1, color: "#D2691E", title: "Bluetooth Speaker" },
-    { image: SafebitesImage, color: "#FF7F50", title: "Safebites" },
-    { image: ShortbotImage, color: "#9333EA", title: "Shortbot" },
-    { image: AutoPinArtImage, color: "#EF4444", title: "Automatic Pin Art" },
-    { image: EMGCarImage, color: "#3B82F6", title: "EMG Car" },
-    { image: BallbotImage, color: "#F97316", title: "Ball-bot" },
-    { image: InterfaceBoard1, color: "#06B6D4", title: "RPi Interface Board" },
-    { image: MPlanImage, color: "#FFCB05", title: "M-Plan" },
-    { image: SafebitesImage, color: "#FF7F50", title: "Safebites" },
-    { image: WovenWindImage, color: "#10B981", title: "Woven Wind" },
-    { image: AutoPinArtImage, color: "#EF4444", title: "Automatic Pin Art" },
-    { image: BallbotImage, color: "#F97316", title: "Ball-bot" },
-    { image: LostFoundImage, color: "#00C6A7", title: "LostandFound+" },
-    { image: EMGCarImage, color: "#3B82F6", title: "EMG Car" },
-    { image: InterfaceBoard1, color: "#06B6D4", title: "RPi Interface Board" },
-    { image: BTSpeakerImage1, color: "#D2691E", title: "Bluetooth Speaker" },
-    { image: ShortbotImage, color: "#9333EA", title: "Shortbot" },
-    { image: WovenWindImage, color: "#10B981", title: "Woven Wind" },
-    { image: MPlanImage, color: "#FFCB05", title: "M-Plan" },
-    { image: LostFoundImage, color: "#00C6A7", title: "LostandFound+" },
-    { image: SafebitesImage, color: "#FF7F50", title: "Safebites" },
-    { image: BallbotImage, color: "#F97316", title: "Ball-bot" },
-    { image: AutoPinArtImage, color: "#EF4444", title: "Automatic Pin Art" },
-    { image: BTSpeakerImage1, color: "#D2691E", title: "Bluetooth Speaker" },
-    { image: EMGCarImage, color: "#3B82F6", title: "EMG Car" },
-    { image: InterfaceBoard1, color: "#06B6D4", title: "RPi Interface Board" },
-    { image: ShortbotImage, color: "#9333EA", title: "Shortbot" },
-    { image: SafebitesImage, color: "#FF7F50", title: "Safebites" },
-    { image: WovenWindImage, color: "#10B981", title: "Woven Wind" },
-    { image: LostFoundImage, color: "#00C6A7", title: "LostandFound+" },
-    { image: BallbotImage, color: "#F97316", title: "Ball-bot" },
-    { image: MPlanImage, color: "#FFCB05", title: "M-Plan" },
-    { image: AutoPinArtImage, color: "#EF4444", title: "Automatic Pin Art" },
-    { image: EMGCarImage, color: "#3B82F6", title: "EMG Car" },
-    { image: InterfaceBoard1, color: "#06B6D4", title: "RPi Interface Board" },
-    { image: BTSpeakerImage1, color: "#D2691E", title: "Bluetooth Speaker" },
-    { image: ShortbotImage, color: "#9333EA", title: "Shortbot" },
-  ];
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Create mailto link with form data
+    const mailtoLink = `mailto:anuhea@umich.edu?subject=Contact from ${
+      formData.name
+    }&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    )}`;
+    window.location.href = mailtoLink;
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -178,20 +146,8 @@ function Home() {
                     lineHeight: "var(--line-height-relaxed)",
                   }}
                 >
-                  A designer-engineer who builds systems that serve people.
-                </motion.p>
-
-                <motion.p
-                  variants={itemVariants}
-                  style={{
-                    fontSize: "var(--text-lg)",
-                    color: "var(--dark-text-secondary)",
-                    marginBottom: "var(--spacing-xl)",
-                    lineHeight: "var(--line-height-relaxed)",
-                  }}
-                >
-                  Blending technical precision with creative energy to build
-                  beautiful, functional experiences.
+                  A Master's student at the University of Michigan studying
+                  Robotics.
                 </motion.p>
 
                 <motion.div
@@ -246,10 +202,7 @@ function Home() {
         </section>
 
         {/* About Me Section */}
-        <section
-          className="section"
-          style={{ background: "var(--bg-primary)" }}
-        >
+        <section className="section" style={{ background: "#ffffff" }}>
           <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -282,192 +235,30 @@ function Home() {
                   working as a server at a family-owned restaurant in my
                   neighborhood. Balancing these two jobs, I began to feel a
                   disconnect: the technical solutions I was creating didn't
-                  align with the communities I wanted to impact. While my
-                  coworkers at the restaurant worked tirelessly to support their
-                  families, the startup was benefitting automotive and furniture
-                  enterprises. This contrast inspired me to focus on building
-                  technologies that serve the people who need them most.
+                  align with the communities I wanted to impact. While I watched
+                  my coworkers at the restaurant work tirelessly to support
+                  their families, the startup was creating technology that
+                  served luxury automotive and furniture companies. This
+                  contrast inspired me to focus on building technologies that
+                  serve the people who need them most.
                 </p>
 
                 <p>
                   I've collaborated with food service workers, university
-                  nurses, facilities staff, elementary school teachers, and lab
-                  technicians. Currently, I'm working with the Neurobionics Lab
-                  at U-M to build an active lower limb prosthetic leg that will
-                  serve individuals with amputated limbs.
+                  nurses, facilities staff, elementary school teachers,
+                  nonprofit boards, and lab technicians. Currently, I'm working
+                  with the Neurobionics Lab at U-M to build a robotic lower limb
+                  prosthetic leg that will serve individuals with amputated
+                  limbs.
                 </p>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* What I Do Section with Mosaic Background */}
-        <section
-          className="section"
-          style={{
-            background: "var(--bg-secondary)",
-            position: "relative",
-            overflow: "hidden",
-            minHeight: "auto",
-            paddingTop: "var(--spacing-lg)",
-            paddingBottom: "var(--spacing-lg)",
-            marginBottom: 0,
-          }}
-        >
-          {/* Animated Mosaic Background */}
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              zIndex: 0,
-              opacity: 0.2,
-            }}
-          >
-            <motion.div
-              animate={{
-                x: ["0%", "-50%"],
-              }}
-              transition={{
-                duration: 60,
-                repeat: Infinity,
-                repeatType: "loop",
-                ease: "linear",
-              }}
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(12, 300px)",
-                gridTemplateRows: "repeat(2, 150px)",
-                /* Ensure any implicit rows created by extra tiles keep the same fixed height */
-                gridAutoRows: "150px",
-                gap: "0.8rem",
-                width: "200%",
-                paddingTop: "0",
-                paddingBottom: "0",
-                alignItems: "stretch",
-                boxSizing: "border-box",
-              }}
-            >
-              {/* First set of tiles */}
-              {projectMosaicTiles.map((tile, index) => (
-                <motion.div
-                  key={`first-${index}`}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
-                  style={{
-                    borderRadius: "var(--radius-lg)",
-                    overflow: "hidden",
-                    position: "relative",
-                    background: "rgba(0,0,0,0.3)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    /* make padding part of the wrapper so images fill cell height consistently */
-                    padding: "1rem",
-                    boxSizing: "border-box",
-                  }}
-                >
-                  <img
-                    src={tile.image}
-                    alt={tile.title}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                      filter: "brightness(0.6)",
-                      /* padding moved to wrapper to prevent implicit row stretching */
-                      padding: 0,
-                      boxSizing: "border-box",
-                    }}
-                  />
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background: `linear-gradient(135deg, ${tile.color}30, transparent)`,
-                      pointerEvents: "none",
-                    }}
-                  />
-                </motion.div>
-              ))}
-              {/* Duplicate set for seamless loop */}
-              {projectMosaicTiles.map((tile, index) => (
-                <motion.div
-                  key={`second-${index}`}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.05 }}
-                  style={{
-                    borderRadius: "var(--radius-lg)",
-                    overflow: "hidden",
-                    position: "relative",
-                    background: "rgba(0,0,0,0.3)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    padding: "1rem",
-                    boxSizing: "border-box",
-                  }}
-                >
-                  <img
-                    src={tile.image}
-                    alt={tile.title}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "contain",
-                      filter: "brightness(0.6)",
-                      padding: 0,
-                      boxSizing: "border-box",
-                    }}
-                  />
-                  <div
-                    style={{
-                      position: "absolute",
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background: `linear-gradient(135deg, ${tile.color}30, transparent)`,
-                      pointerEvents: "none",
-                    }}
-                  />
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-
-          {/* Dark gradient overlay for text contrast */}
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              bottom: 0,
-              background:
-                "linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8))",
-              zIndex: 1,
-            }}
-          />
-
-          {/* Content Overlay */}
-          <div
-            className="container"
-            style={{
-              position: "relative",
-              zIndex: 2,
-              paddingBottom: "var(--spacing-4xl)",
-            }}
-          >
+        {/* Contact Form Section */}
+        <section className="section" style={{ background: "#f5f5f5" }}>
+          <div className="container">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -478,141 +269,161 @@ function Home() {
                 style={{
                   textAlign: "center",
                   marginBottom: "var(--spacing-2xl)",
-                  color: "white",
+                  color: "var(--accent-coral)",
                 }}
               >
-                What I Do
+                Get In Touch
               </h2>
-            </motion.div>
 
-            <div className="grid-auto">
-              {[
-                {
-                  icon: "🤖",
-                  title: "Robotics",
-                  desc: "Building intelligent systems that interact with the physical world",
-                  link: "/projects?filter=robotics",
-                },
-                {
-                  icon: "⚙️",
-                  title: "Hardware",
-                  desc: "Designing and fabricating circuit boards and embedded systems",
-                  link: "/projects?filter=hardware",
-                },
-                {
-                  icon: "🎨",
-                  title: "Design",
-                  desc: "Crafting intuitive, human-centered interfaces and experiences",
-                  link: "/projects?filter=design",
-                },
-              ].map((item, index) => (
-                <Link
-                  to={item.link}
-                  key={index}
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                    whileHover={{
-                      y: -5,
-                      boxShadow: "0 0 30px rgba(0,198,167,0.3)",
-                    }}
-                    style={{
-                      textAlign: "center",
-                      cursor: "pointer",
-                      background: "rgba(255,255,255,0.1)",
-                      backdropFilter: "blur(12px)",
-                      border: "1px solid rgba(255,255,255,0.15)",
-                      borderRadius: "1rem",
-                      padding: "var(--spacing-xl)",
-                      height: "320px",
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "center",
-                    }}
-                  >
-                  <div
-                    style={{
-                      fontSize: "var(--text-6xl)",
-                      marginBottom: "var(--spacing-md)",
-                    }}
-                  >
-                    {item.icon}
-                  </div>
-                  <h3
-                    style={{
-                      color: "var(--accent-coral)",
-                      marginBottom: "var(--spacing-sm)",
-                    }}
-                  >
-                    {item.title}
-                  </h3>
-                  <p style={{ color: "rgba(255,255,255,0.9)" }}>{item.desc}</p>
-                </motion.div>
-                </Link>
-              ))}
-            </div>
-
-            {/* Animated arrow to projects */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8, duration: 1 }}
-              style={{
-                marginTop: "var(--spacing-3xl)",
-                marginBottom: "var(--spacing-3xl)",
-                textAlign: "center",
-                paddingBottom: "var(--spacing-md)",
-              }}
-            >
-              <Link
-                to="/projects"
+              <form
+                onSubmit={handleSubmit}
                 style={{
-                  display: "inline-flex",
-                  flexDirection: "row",
-                  alignItems: "center",
-                  gap: "var(--spacing-sm)",
-                  textDecoration: "none",
-                  cursor: "pointer",
-                  padding: "var(--spacing-sm) 0",
+                  maxWidth: "600px",
+                  margin: "0 auto",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "var(--spacing-lg)",
                 }}
               >
-                <span
+                <div>
+                  <label
+                    htmlFor="name"
+                    style={{
+                      display: "block",
+                      marginBottom: "var(--spacing-xs)",
+                      color: "var(--text-primary)",
+                      fontSize: "var(--text-sm)",
+                      fontWeight: "500",
+                    }}
+                  >
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    style={{
+                      width: "100%",
+                      padding: "var(--spacing-md)",
+                      borderRadius: "var(--radius-md)",
+                      border: "1px solid var(--border-color)",
+                      background: "#ffffff",
+                      color: "var(--text-primary)",
+                      fontSize: "var(--text-base)",
+                      outline: "none",
+                      transition: "border-color 0.3s",
+                    }}
+                    onFocus={(e) =>
+                      (e.target.style.borderColor = "var(--accent-teal)")
+                    }
+                    onBlur={(e) =>
+                      (e.target.style.borderColor = "var(--border-color)")
+                    }
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="email"
+                    style={{
+                      display: "block",
+                      marginBottom: "var(--spacing-xs)",
+                      color: "var(--text-primary)",
+                      fontSize: "var(--text-sm)",
+                      fontWeight: "500",
+                    }}
+                  >
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    style={{
+                      width: "100%",
+                      padding: "var(--spacing-md)",
+                      borderRadius: "var(--radius-md)",
+                      border: "1px solid var(--border-color)",
+                      background: "#ffffff",
+                      color: "var(--text-primary)",
+                      fontSize: "var(--text-base)",
+                      outline: "none",
+                      transition: "border-color 0.3s",
+                    }}
+                    onFocus={(e) =>
+                      (e.target.style.borderColor = "var(--accent-teal)")
+                    }
+                    onBlur={(e) =>
+                      (e.target.style.borderColor = "var(--border-color)")
+                    }
+                  />
+                </div>
+
+                <div>
+                  <label
+                    htmlFor="message"
+                    style={{
+                      display: "block",
+                      marginBottom: "var(--spacing-xs)",
+                      color: "var(--text-primary)",
+                      fontSize: "var(--text-sm)",
+                      fontWeight: "500",
+                    }}
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows="5"
+                    style={{
+                      width: "100%",
+                      padding: "var(--spacing-md)",
+                      borderRadius: "var(--radius-md)",
+                      border: "1px solid var(--border-color)",
+                      background: "#ffffff",
+                      color: "var(--text-primary)",
+                      fontSize: "var(--text-base)",
+                      outline: "none",
+                      transition: "border-color 0.3s",
+                      resize: "vertical",
+                      fontFamily: "inherit",
+                    }}
+                    onFocus={(e) =>
+                      (e.target.style.borderColor = "var(--accent-teal)")
+                    }
+                    onBlur={(e) =>
+                      (e.target.style.borderColor = "var(--border-color)")
+                    }
+                  />
+                </div>
+
+                <motion.button
+                  type="submit"
+                  className="btn"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
                   style={{
-                    fontSize: "var(--text-lg)",
-                    color: "white",
-                    lineHeight: "1.5",
-                    background: "linear-gradient(90deg, #00C6A7, #FF7F50)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent",
-                    backgroundClip: "text",
-                    fontWeight: "600",
+                    alignSelf: "flex-start",
                   }}
                 >
-                  See my projects page
-                </span>
-                <motion.span
-                  animate={{ x: [0, 10, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5 }}
-                  style={{
-                    fontSize: "var(--text-lg)",
-                    color: "var(--accent-coral)",
-                    lineHeight: "1.5",
-                  }}
-                >
-                  →
-                </motion.span>
-              </Link>
+                  Send Message
+                </motion.button>
+              </form>
             </motion.div>
           </div>
         </section>
       </main>
       <Footer />
-      <ScrollToTopButton />
     </>
   );
 }

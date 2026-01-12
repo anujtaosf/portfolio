@@ -4,7 +4,7 @@ function SectionTitle({ title, subtitle }) {
   return (
     <div className="section-title">
       <h2>{title}</h2>
-      {subtitle && <p>{subtitle}</p>}
+      {subtitle && <p style={{ fontStyle: 'italic', fontSize: 'var(--text-sm)' }}>{subtitle}</p>}
     </div>
   );
 }
