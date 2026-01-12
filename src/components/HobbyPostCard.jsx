@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 function clampIndex(i, n) {
   if (n <= 0) return 0;
@@ -50,7 +50,7 @@ export default function HobbyPostCard({ title, description, images = [], color =
                 {/* Foreground image, always fully visible */}
                 <img
                 src={active}
-                alt={`${title} photo ${idx + 1}`}
+                alt={`${title} ${idx + 1}`}
                 className="hobby-slide-img"
                 draggable="false"
                 />
