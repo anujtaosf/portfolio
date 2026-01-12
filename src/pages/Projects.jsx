@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import ScrollToTopButton from '../components/ScrollToTopButton';
 import SectionTitle from '../components/SectionTitle';
 import ProjectCard from '../components/ProjectCard';
 import CaseStudyCard from '../components/CaseStudyCard';
@@ -142,23 +141,6 @@ function Projects() {
       date: 'Aug 2024 - Dec 2024'
     },
     {
-      title: 'M-Plan',
-      description: 'A scheduling tool for college students to plan ahead their classes and credits',
-      image: MPlanImage,
-      thumbnailImages: [MPlanImage],
-      tags: ['MERN', 'UI/UX Design', 'MongoDB', 'Express', 'React', 'Node.js'],
-      category: 'design',
-      timeline: 'October 2022 - February 2023',
-      role: 'UI/UX Designer and Front-end Developer',
-      motivation: 'Creating a platform to help friends and myself plan out classes ahead of time',
-      stage: 'Semi-functional prototype for personal use, planning to expand functionality in the winter',
-      link: null,
-      github: null,
-      color: '#FFCB05',
-      gridSpan: 'medium', // 2x1
-      date: 'Oct 2022 - Feb 2023'
-    },
-    {
       title: 'Bluetooth Speaker',
       description: 'Leveraging makerspace tools to create a unique and useful product',
       image: BTSpeakerImage1,
@@ -240,6 +222,23 @@ function Projects() {
       color: '#3B82F6',
       gridSpan: 'medium', // 2x1 - expanded for better image display
       date: 'Feb 2023 - May 2023'
+    },
+    {
+      title: 'M-Plan',
+      description: 'A scheduling tool for college students to plan ahead their classes and credits',
+      image: MPlanImage,
+      thumbnailImages: [MPlanImage],
+      tags: ['MERN', 'UI/UX Design', 'MongoDB', 'Express', 'React', 'Node.js'],
+      category: 'design',
+      timeline: 'October 2022 - February 2023',
+      role: 'UI/UX Designer and Front-end Developer',
+      motivation: 'Creating a platform to help friends and myself plan out classes ahead of time',
+      stage: 'Semi-functional prototype for personal use, planning to expand functionality in the winter',
+      link: null,
+      github: null,
+      color: '#FFCB05',
+      gridSpan: 'medium', // 2x1
+      date: 'Oct 2022 - Feb 2023'
     }
   ];
 
@@ -689,7 +688,6 @@ function Projects() {
         </section>
       </main>
       <Footer />
-      <ScrollToTopButton />
     </>
   );
 }

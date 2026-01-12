@@ -206,11 +206,17 @@ function ProjectCard({
 
               <div style={{ padding: '0 var(--spacing-xl) var(--spacing-xl)' }}>
                 <div className="work-modal-header" style={{ marginBottom: 'var(--spacing-lg)' }}>
-                  <h2 style={{ color, marginBottom: 'var(--spacing-sm)' }}>{title}</h2>
+                  <h2 style={{
+                    color,
+                    marginBottom: 'var(--spacing-lg)',
+                    fontSize: 'var(--text-4xl)',
+                    fontWeight: 'bold'
+                  }}>{title}</h2>
                   <p style={{
-                    fontSize: 'var(--text-base)',
+                    fontSize: 'var(--text-lg)',
                     color: 'var(--text-secondary)',
-                    marginBottom: 'var(--spacing-md)'
+                    marginBottom: 'var(--spacing-xl)',
+                    lineHeight: 'var(--line-height-relaxed)'
                   }}>
                     {description}
                   </p>
@@ -219,18 +225,18 @@ function ProjectCard({
                   <div style={{
                     display: 'flex',
                     flexWrap: 'wrap',
-                    gap: 'var(--spacing-md)',
-                    fontSize: 'var(--text-sm)',
-                    color: 'var(--text-secondary)'
+                    gap: 'var(--spacing-xl)',
+                    fontSize: 'var(--text-base)',
+                    marginBottom: 'var(--spacing-lg)'
                   }}>
                     {timeline && (
                       <div>
-                        <strong style={{ color }}>Timeline:</strong> {timeline}
+                        <strong style={{ color }}>Timeline:</strong> <span style={{ color: 'var(--text-secondary)' }}>{timeline}</span>
                       </div>
                     )}
                     {role && (
                       <div>
-                        <strong style={{ color }}>Role:</strong> {role}
+                        <strong style={{ color }}>Role:</strong> <span style={{ color: 'var(--text-secondary)' }}>{role}</span>
                       </div>
                     )}
                   </div>
@@ -238,28 +244,28 @@ function ProjectCard({
 
                 <div className="work-modal-body">
                   {motivation && (
-                    <div style={{ marginBottom: 'var(--spacing-md)' }}>
-                      <h4 style={{ color, marginBottom: 'var(--spacing-xs)', fontSize: 'var(--text-base)' }}>
+                    <div style={{ marginBottom: 'var(--spacing-lg)' }}>
+                      <h4 style={{ color, marginBottom: 'var(--spacing-sm)', fontSize: 'var(--text-base)', fontWeight: '600' }}>
                         Motivation
                       </h4>
-                      <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>{motivation}</p>
+                      <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-base)', lineHeight: 'var(--line-height-relaxed)' }}>{motivation}</p>
                     </div>
                   )}
 
                   {stage && (
                     <div style={{ marginBottom: 'var(--spacing-lg)' }}>
-                      <h4 style={{ color, marginBottom: 'var(--spacing-xs)', fontSize: 'var(--text-base)' }}>
+                      <h4 style={{ color, marginBottom: 'var(--spacing-sm)', fontSize: 'var(--text-base)', fontWeight: '600' }}>
                         Stage
                       </h4>
-                      <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-sm)' }}>{stage}</p>
+                      <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--text-base)', lineHeight: 'var(--line-height-relaxed)' }}>{stage}</p>
                     </div>
                   )}
 
                   <div style={{ marginBottom: 'var(--spacing-lg)' }}>
-                    <h4 style={{ color, marginBottom: 'var(--spacing-sm)', fontSize: 'var(--text-base)' }}>
+                    <h4 style={{ color, marginBottom: 'var(--spacing-sm)', fontSize: 'var(--text-base)', fontWeight: '600' }}>
                       Tools
                     </h4>
-                    <div className="card-tags">
+                    <div className="card-tags" style={{ gap: 'var(--spacing-sm)' }}>
                       {tags && tags.map((tag, index) => (
                         <span
                           key={index}
@@ -267,7 +273,8 @@ function ProjectCard({
                           style={{
                             borderColor: color,
                             color: color,
-                            fontSize: 'var(--text-xs)'
+                            fontSize: 'var(--text-sm)',
+                            padding: '6px 14px'
                           }}
                         >
                           {tag}

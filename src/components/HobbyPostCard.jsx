@@ -6,7 +6,7 @@ function clampIndex(i, n) {
   return ((i % n) + n) % n; // safe wrap
 }
 
-export default function HobbyPostCard({ title, description, images = [] }) {
+export default function HobbyPostCard({ title, description, images = [], color = 'var(--accent-teal)' }) {
   const safeImages = useMemo(() => (Array.isArray(images) ? images : []), [images]);
   const count = safeImages.length;
 
@@ -19,7 +19,7 @@ export default function HobbyPostCard({ title, description, images = [] }) {
   const showControls = count > 1;
 
   return (
-    <div className="hobby-post">
+    <div className="hobby-post" style={{ '--hobby-accent': color }}>
       {/* Left: text */}
       <div className="hobby-post-text">
         <h3 className="hobby-post-title">{title}</h3>

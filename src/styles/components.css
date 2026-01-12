@@ -656,6 +656,12 @@ body.dark-mode .timeline-dot {
   transition: all var(--transition-base);
 }
 
+.work-timeline-dot > div {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
 body.dark-mode .work-timeline-dot {
   background: var(--dark-bg-primary);
 }
@@ -1071,11 +1077,11 @@ body.dark-mode .hobby-post {
 .hobby-post-title {
   font-size: var(--text-4xl);
   margin: 0 0 var(--spacing-sm) 0;
-  color: var(--text-primary);
+  color: var(--hobby-accent, var(--text-primary));
 }
 
 body.dark-mode .hobby-post-title {
-  color: var(--dark-text-primary);
+  color: var(--hobby-accent, var(--dark-text-primary));
 }
 
 .hobby-post-desc {
@@ -1238,7 +1244,7 @@ body.dark-mode .hobby-nav {
 }
 
 .hobby-dot.active {
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--hobby-accent, rgba(255, 255, 255, 0.95));
 }
 
 /* Mobile: stack like a post */

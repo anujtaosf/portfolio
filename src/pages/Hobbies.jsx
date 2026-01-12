@@ -45,6 +45,7 @@ function Hobbies() {
       description:
         "Always down to run a fun 5K with friends and I just ran my first triathlon in June of 2025! I loved it so much that I decided to compete for a 2nd time that summer.",
       images: [Run3, Run1, Run2, Run4],
+      color: '#F97316',
     },
     {
       title: "Architecture",
@@ -63,18 +64,21 @@ function Hobbies() {
         Arch10,
         Arch11,
       ],
+      color: '#3B82F6',
     },
     {
       title: "Hiking and Outdoors",
       description:
         "From surfing to skiing to rock climbing, I've had some pretty great life highs! I have also had my knees and elbows beaten and bruised from my many falls 🫠",
       images: [Hike1, Hike2, Climb1, Climb2],
+      color: '#10B981',
     },
     {
       title: "Tinkering",
       description:
         "I enjoy making things for fun and as gifts for friends. I need to get better at documenting these creations, but here are some of my works so far with different mediums",
       images: [Tinker1, Tinker2, TinkerMaking],
+      color: '#9333EA',
     }
   ];
 
