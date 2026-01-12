@@ -69,7 +69,7 @@ function Hobbies() {
     {
       title: "Hiking and Outdoors",
       description:
-        "From surfing to skiing to rock climbing, I've had some pretty great life highs! I have also had my knees and elbows beaten and bruised from my many falls 🫠",
+        "From surfing to skiing to rock climbing, I've had some pretty great life highs! I am currently in the process of learning to snowboard ... more on that once I can get down a run without catching the edge of my board 🫠",
       images: [Hike1, Hike2, Climb1, Climb2],
       color: '#10B981',
     },
