@@ -131,7 +131,7 @@ function WorkExperienceCard({ data, index }) {
             </div>
 
             <div className="work-modal-body">
-              <h4 style={{ color: 'var(--accent-teal)', marginBottom: 'var(--spacing-md)' }}>
+              <h4 style={{ color: data.color, marginBottom: 'var(--spacing-md)' }}>
                 Key Contributions
               </h4>
               <ul style={{ marginBottom: 'var(--spacing-lg)' }}>
@@ -142,7 +142,7 @@ function WorkExperienceCard({ data, index }) {
                 ))}
               </ul>
 
-              <h4 style={{ color: 'var(--accent-teal)', marginBottom: 'var(--spacing-md)' }}>
+              <h4 style={{ color: data.color, marginBottom: 'var(--spacing-md)' }}>
                 Technologies & Skills
               </h4>
               <div className="work-tools" style={{ marginBottom: 'var(--spacing-lg)' }}>
