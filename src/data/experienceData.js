@@ -26,7 +26,7 @@ export const experience = [
     location: "Ann Arbor, MI",
     date: "January 2025 – May 2025",
     summary: [
-      "Structured and facilitated seven labs for a newly developed course, collaborating with the professor to design effective learning approaches, writing and testing each lab, and guiding students through implementation and debugging.",
+      "Structured and facilitated labs teaching CAD principles, motor modeling and calibration, and robotics control systems. Collaborated with the professor to design effective learning approaches, authored and tested lab materials, and worked with students through implementation and debugging.",
       "Composed and lectured about serial communication and introductory embedded systems to provide students with a deeper understanding of how the sensors and microcontrollers communicate in their robots.",
     ],
     tools: ["Embedded Systems", "Teaching", "Arduino", "Serial Communication"],

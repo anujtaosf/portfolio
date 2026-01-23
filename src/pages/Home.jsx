@@ -140,8 +140,8 @@ function Home() {
                     maxWidth: "42rem",
                   }}
                 >
-                  I’m a Master’s Robotics student at the University of Michigan.
-                  I am currently designing sensor and power electronics for a
+                  I’m a Master’s Robotics student at the University of Michigan
+                  currently designing sensor and power electronics for a
                   motorized lower-limb prosthetic called the Open Source Leg.
                   I’m seeking a role where I can take electronics from concept
                   to deployment on devices that meaningfully improve people's
