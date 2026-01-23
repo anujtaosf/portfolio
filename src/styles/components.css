@@ -53,6 +53,10 @@ body.dark-mode .navbar {
   transition: color var(--transition-fast);
 }
 
+.text-teal {
+  color: var(--accent-teal);
+}
+
 body.dark-mode .navbar-link {
   color: var(--dark-text-primary);
 }

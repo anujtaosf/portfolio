@@ -119,12 +119,33 @@ function Home() {
                   style={{
                     fontSize: "var(--text-2xl)",
                     color: "var(--neutral-light)",
-                    marginBottom: "var(--spacing-xl)",
+                    marginBottom: "var(--spacing-md)",
                     lineHeight: "var(--line-height-relaxed)",
+                    fontWeight: 600,
                   }}
                 >
-                  A Master's student at the University of Michigan studying
-                  Robotics.
+                  I build <span className="text-teal">hardware</span> for robots
+                  in service of the{" "}
+                  <span className="text-teal">communities</span> that I care
+                  about
+                </motion.p>
+
+                <motion.p
+                  variants={itemVariants}
+                  style={{
+                    fontSize: "var(--text-lg)",
+                    color: "rgba(255,255,255,0.78)",
+                    marginBottom: "var(--spacing-lg)",
+                    lineHeight: "var(--line-height-relaxed)",
+                    maxWidth: "42rem",
+                  }}
+                >
+                  I’m a Master’s Robotics student at the University of Michigan.
+                  I am currently designing sensor and power electronics for a
+                  motorized lower-limb prosthetic called the Open Source Leg.
+                  I’m seeking a role where I can take electronics from concept
+                  to deployment on devices that meaningfully improve people's
+                  lives.
                 </motion.p>
 
                 <motion.div
@@ -183,9 +204,10 @@ function Home() {
                   disconnect: the technical solutions I was creating didn't
                   align with the communities I wanted to impact. While I watched
                   my coworkers at the restaurant work tirelessly to support
-                  their families, the startup was creating technology for luxury automotive and furniture companies. This
-                  contrast inspired me to focus on building technologies that
-                  serve the people who need them most.
+                  their families, the startup was creating technology for luxury
+                  automotive and furniture companies. This contrast inspired me
+                  to focus on building technologies that serve the people who
+                  need them most.
                 </p>
 
                 <p>
@@ -194,13 +216,13 @@ function Home() {
                   nonprofit boards, and lab technicians. Currently, I'm working
                   with the Neurobionics Lab at U-M to build a robotic lower limb
                   prosthetic leg that will serve individuals with amputated
-                  limbs. I work on the hardware and electrical system for the leg, designing a high speed PCB to connect all of our sensors.
+                  limbs. I work on the hardware and electrical system for the
+                  leg, designing a high speed PCB to connect all of our sensors.
                 </p>
               </div>
             </motion.div>
           </div>
         </section>
-
       </main>
       <Footer />
     </>
