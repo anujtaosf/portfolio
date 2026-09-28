@@ -71,6 +71,20 @@ export const projects = [
     date: "May 2025 - May 2026",
   },
   {
+    slug: "short-bot",
+    title: "Short-bot: A robot for social navigation",
+    description:
+      "Worked with U-M professor to develop a robot capable of navigating and adapting to crowded social environments",
+    image: ShortbotImage,
+    imageAlt: "Short-bot, a small social navigation robot",
+    tags: ["Design", "CAD", "Robot Control"],
+    category: "robotics",
+    link: "https://anujtaosf.github.io/shortbot_among_us/",
+    linkLabel: "Full project site",
+    external: true, // card opens the project site directly
+    date: "Jan 2025 - Jan 2026",
+  },
+  {
     slug: "rock-talk",
     title: "Rock-Talk",
     description:
@@ -187,20 +201,6 @@ export const projects = [
         ],
       },
     ],
-  },
-  {
-    slug: "short-bot",
-    title: "Short-bot: A robot for social navigation",
-    description:
-      "Worked with U-M professor to develop a robot capable of navigating and adapting to crowded social environments",
-    image: ShortbotImage,
-    imageAlt: "Short-bot, a small social navigation robot",
-    tags: ["Design", "CAD", "Robot Control"],
-    category: "robotics",
-    link: "https://anujtaosf.github.io/shortbot_among_us/",
-    linkLabel: "Full project site",
-    external: true, // card opens the project site directly
-    date: "Jan 2025 - Jan 2026",
   },
   {
     slug: "lostandfound",
