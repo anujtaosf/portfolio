@@ -1,8 +1,8 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./pages/Home";
-import Projects from "./pages/Projects";
-import Work from "./pages/Work";
-import Hobbies from "./pages/Hobbies";
+import ProjectDetail from "./pages/ProjectDetail";
+import About from "./pages/About";
+import Resume from "./pages/Resume";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
@@ -11,9 +11,14 @@ function App() {
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/work" element={<Work />} />
-        <Route path="/hobbies" element={<Hobbies />} />
+        <Route path="/projects/:slug" element={<ProjectDetail />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/resume" element={<Resume />} />
+        {/* Old routes, kept so existing links still land somewhere sensible */}
+        <Route path="/projects" element={<Navigate to="/" state={{ scrollTo: "projects" }} replace />} />
+        <Route path="/work" element={<Navigate to="/resume" replace />} />
+        <Route path="/hobbies" element={<Navigate to="/about" replace />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
   );

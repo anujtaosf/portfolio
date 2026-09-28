@@ -1,264 +1,85 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-import ScrollToTopButton from '../components/ScrollToTopButton';
-import SectionTitle from '../components/SectionTitle';
+import Layout from "../components/Layout";
+import ProfilePic from "../assets/portraits/profile_pic_oval.png";
+import { outsideTheLab } from "../data/sketchbookData";
 
 function About() {
-  const timelineData = [
-    {
-      year: '2024',
-      title: 'Neurobionics Lab',
-      description: 'Working on innovative projects at the University of Michigan Neurobionics Lab, focusing on technology that serves people.',
-    },
-    {
-      year: '2023',
-      title: 'Started University',
-      description: 'Began my journey at the University of Michigan, pursuing my passion for engineering and design.',
-    },
-    {
-      year: '2022',
-      title: 'First Hardware Project',
-      description: 'Completed my first major hardware project, sparking my interest in renewable energy solutions.',
-    },
-  ];
-
   return (
-    <>
-      <Navbar />
-      <main style={{ marginTop: '80px', minHeight: '100vh' }}>
-        <section className="section">
-          <div className="container">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <SectionTitle
-                title="About Me"
-                subtitle="Get to know me better"
-              />
-            </motion.div>
+    <Layout className="container page about">
+      <h1 className="page-title">About</h1>
 
-            {/* Profile Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr 2fr',
-                gap: 'var(--spacing-3xl)',
-                marginBottom: 'var(--spacing-3xl)',
-                alignItems: 'center'
-              }}
-            >
-              <div>
-                {/* Profile image placeholder */}
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  style={{
-                    width: '100%',
-                    aspectRatio: '1',
-                    background: 'var(--gradient-accent)',
-                    borderRadius: 'var(--radius-xl)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontSize: 'var(--text-6xl)',
-                    boxShadow: 'var(--shadow-lg)',
-                    position: 'relative',
-                    overflow: 'hidden'
-                  }}
-                >
-                  {/* Add your profile image here */}
-                  <span style={{ filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))' }}>👤</span>
-                  <div style={{
-                    position: 'absolute',
-                    inset: 0,
-                    background: 'linear-gradient(135deg, rgba(255,255,255,0.1), transparent)',
-                  }}></div>
-                </motion.div>
-              </div>
-              <div>
-                <h3 style={{ marginBottom: 'var(--spacing-md)', color: 'var(--accent-coral)' }}>
-                  Hi, I'm Anuhea!
-                </h3>
-                <p style={{ marginBottom: 'var(--spacing-md)', color: 'var(--text-secondary)' }}>
-                  I'm a passionate designer-engineer with a love for creating beautiful and functional
-                  systems that serve people. My journey in tech started with a curiosity about how things
-                  work and evolved into a deep commitment to building technology with purpose.
-                </p>
-                <p style={{ marginBottom: 'var(--spacing-md)', color: 'var(--text-secondary)' }}>
-                  Currently, I'm studying at the University of Michigan and working at the{' '}
-                  <span style={{
-                    background: 'linear-gradient(to right, var(--accent-teal), var(--accent-coral))',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent',
-                    fontWeight: 600
-                  }}>
-                    Neurobionics Lab
-                  </span>
-                  , where I blend engineering precision with creative energy.
-                </p>
-                <p style={{ color: 'var(--text-secondary)' }}>
-                  When I'm not coding or designing, you can find me exploring nature, sketching ideas,
-                  or experimenting in the kitchen. I believe in continuous learning and am always
-                  exploring new technologies and methodologies to improve my craft.
-                </p>
-              </div>
-            </motion.div>
+      <div className="about-grid">
+        <figure className="about-portrait">
+          <img src={ProfilePic} alt="Portrait of Anuhea Tao" />
+        </figure>
 
-            {/* Skills Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              style={{ marginBottom: 'var(--spacing-3xl)' }}
-            >
-              <h3 style={{
-                marginBottom: 'var(--spacing-xl)',
-                textAlign: 'center',
-                color: 'var(--accent-coral)'
-              }}>
-                Skills & Technologies
-              </h3>
-              <div className="grid-auto">
-                {[
-                  {
-                    title: 'Frontend',
-                    skills: ['React', 'JavaScript/TypeScript', 'HTML/CSS', 'Responsive Design', 'Framer Motion']
-                  },
-                  {
-                    title: 'Backend',
-                    skills: ['Node.js', 'Python', 'Databases (SQL/NoSQL)', 'RESTful APIs', 'Express']
-                  },
-                  {
-                    title: 'Hardware & Design',
-                    skills: ['Arduino', 'CAD Software', 'UI/UX Design', 'Prototyping', 'Sketching']
-                  }
-                ].map((category, index) => (
-                  <motion.div
-                    key={index}
-                    className="card"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ y: -5 }}
-                  >
-                    <div className="card-content">
-                      <h4 style={{ color: 'var(--accent-teal)', marginBottom: 'var(--spacing-md)' }}>
-                        {category.title}
-                      </h4>
-                      <ul style={{ listStyle: 'none', padding: 0 }}>
-                        {category.skills.map((skill, idx) => (
-                          <li
-                            key={idx}
-                            style={{
-                              padding: 'var(--spacing-xs) 0',
-                              color: 'var(--text-secondary)',
-                              display: 'flex',
-                              alignItems: 'center',
-                              gap: 'var(--spacing-xs)'
-                            }}
-                          >
-                            <span style={{ color: 'var(--accent-coral)' }}>→</span>
-                            {skill}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+        <div className="about-copy">
+          <p>
+            Growing up in San Francisco, I got my first engineering job at a
+            startup developing "wood without trees" while simultaneously working
+            as a server at a family-owned restaurant in my neighborhood.
+            Balancing these two jobs, I began to feel a disconnect: the technical
+            solutions I was creating didn't align with the communities I wanted
+            to impact.
+          </p>
+          <p>
+            While I watched my coworkers at the restaurant work tirelessly to
+            support their families, the startup was creating technology for
+            luxury automotive and furniture companies. This contrast inspired me
+            to focus on building technologies that serve the people who need
+            them most.
+          </p>
+          <p>
+            I've collaborated with food service workers, university nurses,
+            facilities staff, elementary school teachers, nonprofit boards, and
+            lab technicians. With the Neurobionics Lab at U-M, I helped build a
+            robotic lower limb prosthetic leg for individuals with amputated
+            limbs, working on the hardware and electrical system and designing a
+            high speed PCB to connect all of our sensors.
+          </p>
+        </div>
 
-            {/* Timeline Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              style={{ marginBottom: 'var(--spacing-3xl)' }}
-            >
-              <h3 style={{
-                marginBottom: 'var(--spacing-xl)',
-                textAlign: 'center',
-                color: 'var(--accent-coral)'
-              }}>
-                My Journey
-              </h3>
-              <div className="timeline">
-                {timelineData.map((item, index) => (
-                  <motion.div
-                    key={index}
-                    className="timeline-item"
-                    initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.2 }}
-                  >
-                    <div className="timeline-content">
-                      <h4 style={{
-                        color: 'var(--accent-teal)',
-                        marginBottom: 'var(--spacing-sm)',
-                        fontFamily: 'var(--font-mono)',
-                        fontSize: 'var(--text-sm)'
-                      }}>
-                        {item.year}
-                      </h4>
-                      <h3 style={{ marginBottom: 'var(--spacing-sm)' }}>{item.title}</h3>
-                      <p style={{ color: 'var(--text-secondary)', lineHeight: 'var(--line-height-relaxed)' }}>
-                        {item.description}
-                      </p>
-                    </div>
-                    <div className="timeline-dot"></div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+        <aside className="about-side" aria-label="Quick facts">
+          <dl>
+            <div>
+              <dt>Currently</dt>
+              <dd>Robotics Systems Intern, Dephy, Inc.</dd>
+            </div>
+            <div>
+              <dt>Studied</dt>
+              <dd>MS + BSE in Robotics, University of Michigan</dd>
+            </div>
+            <div>
+              <dt>Interested in</dt>
+              <dd>
+                <ul>
+                  <li>Electro-mechanical devices</li>
+                  <li>PCB design + sensor integration</li>
+                  <li>Motor control</li>
+                  <li>Technology for the people who need it most</li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
 
-            {/* Education/Experience Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <h3 style={{
-                marginBottom: 'var(--spacing-xl)',
-                textAlign: 'center',
-                color: 'var(--accent-coral)'
-              }}>
-                Education
-              </h3>
-              <div className="card">
-                <div className="card-content">
-                  <h4 style={{ color: 'var(--accent-teal)' }}>University of Michigan</h4>
-                  <p className="text-mono" style={{
-                    color: 'var(--text-secondary)',
-                    marginBottom: 'var(--spacing-md)',
-                    fontSize: 'var(--text-sm)'
-                  }}>
-                    202X - Present
-                  </p>
-                  <p style={{ color: 'var(--text-secondary)' }}>
-                    Studying engineering with a focus on hardware design, software development, and
-                    human-centered technology. Active member of the Neurobionics Lab, working on
-                    projects that blend technical innovation with real-world impact.
-                  </p>
-                </div>
-              </div>
-            </motion.div>
+      <section className="section outside" aria-labelledby="outside-title">
+        <h2 id="outside-title" className="rule-heading">Outside the lab</h2>
+        {outsideTheLab.map((group) => (
+          <div key={group.title} className={`outside-group accent-${group.accent}`}>
+            <div className="outside-text">
+              <h3 className="kicker"><span className="dot" aria-hidden="true" />{group.title}</h3>
+              <p>{group.description}</p>
+            </div>
+            <ul className="outside-photos">
+              {group.images.map((src, i) => (
+                <li key={src}><img src={src} alt={`${group.title} (${i + 1} of ${group.images.length})`} loading="lazy" /></li>
+              ))}
+            </ul>
           </div>
-        </section>
-      </main>
-      <Footer />
-      <ScrollToTopButton />
-    </>
+        ))}
+      </section>
+    </Layout>
   );
 }
 

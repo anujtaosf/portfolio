@@ -1,35 +1,42 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Navbar() {
-  const location = useLocation();
-
-  const isActive = (path) => {
-    return location.pathname === path ? 'active' : '';
-  };
+  const { pathname } = useLocation();
+  const onWork = pathname === "/" || pathname.startsWith("/projects");
 
   return (
-    <nav className="navbar">
-      <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
-          Anuhea Portfolio
+    <header className="site-header">
+      <nav className="container nav" aria-label="Main">
+        <Link to="/" className="nav-name">
+          Anuhea Tao
         </Link>
-        <div className="navbar-menu">
-          <Link to="/" className={`navbar-link ${isActive('/')}`}>
-            Home
-          </Link>
-          <Link to="/projects" className={`navbar-link ${isActive('/projects')}`}>
-            Projects
-          </Link>
-          <Link to="/work" className={`navbar-link ${isActive('/work')}`}>
+        <div className="nav-links">
+          <Link
+            to="/"
+            state={{ scrollTo: "projects" }}
+            className={`nav-link${onWork ? " is-current" : ""}`}
+            aria-current={onWork ? "page" : undefined}
+          >
             Work
           </Link>
-          <Link to="/hobbies" className={`navbar-link ${isActive('/hobbies')}`}>
-            Hobbies
-          </Link>
+          <NavLink to="/about" className={({ isActive }) => `nav-link${isActive ? " is-current" : ""}`}>
+            About
+          </NavLink>
+          <NavLink to="/resume" className={({ isActive }) => `nav-link${isActive ? " is-current" : ""}`}>
+            Resume
+          </NavLink>
+          <span className="nav-icons">
+            <a href="https://github.com/anujtaosf" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <FaGithub aria-hidden="true" />
+            </a>
+            <a href="https://www.linkedin.com/in/anuhea-tao/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <FaLinkedin aria-hidden="true" />
+            </a>
+          </span>
         </div>
-      </div>
-    </nav>
+      </nav>
+    </header>
   );
 }
 

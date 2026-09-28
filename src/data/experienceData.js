@@ -1,10 +1,3 @@
-// Import logos from src/assets/logos
-import NeuroLogo from '../assets/logos/Neuro_logo.svg';
-import IntelLogo from '../assets/logos/Intel_logo.png';
-import MakerspaceLogo from '../assets/logos/Mrobotics_logo.jpg';
-import OptivoltLogo from '../assets/logos/Optivolt_logo.png';
-import LingroveLogo from '../assets/logos/Lingrove_logo.png';
-
 export const experience = [
   {
     company: "Neurobionics Lab",
@@ -17,8 +10,6 @@ export const experience = [
       "Created a procedure to quantify audible noise in active prosthetic devices, enabling users to compare sound levels.",
     ],
     tools: ["PCB Design", "Embedded Systems", "C/C++", "Linux"],
-    logo: NeuroLogo,
-    color: "#00C6A7", // Teal accent
   },
   {
     company: "U-M Robotics GSI",
@@ -30,8 +21,6 @@ export const experience = [
       "Composed and lectured about serial communication and introductory embedded systems to provide students with a deeper understanding of how the sensors and microcontrollers communicate in their robots.",
     ],
     tools: ["Embedded Systems", "Teaching", "Arduino", "Serial Communication"],
-    logo: MakerspaceLogo,
-    color: "#F59E0B", // Amber/Orange
   },
   {
     company: "Intel",
@@ -43,8 +32,6 @@ export const experience = [
       "Wrote and debugged I2C/SPI interrupts and integrated build switches for chip bootstages.",
     ],
     tools: ["Bash", "I2C", "SPI", "Python"],
-    logo: IntelLogo,
-    color: "#0071C5", // Intel blue
   },
   {
     company: "U-M Robotics Makerspace",
@@ -58,8 +45,6 @@ export const experience = [
       "Collaborated with U-M Robotics faculty to implement new lab infrastructure and optimize workflows.",
     ],
     tools: ["CAD", "3D Printing", "SLA/SLS/FDM", "Machine Maintenance"],
-    logo: MakerspaceLogo,
-    color: "#9333EA", // Purple (U-M colors inspired)
   },
   {
     company: "Optivolt",
@@ -72,8 +57,6 @@ export const experience = [
       "Developed power tracking visualizations showing a 40% efficiency gain.",
     ],
     tools: ["3D Printing", "Python", "Manufacturing"],
-    logo: OptivoltLogo,
-    color: "#FF7F50", // Coral accent
   },
   {
     company: "Lingrove",
@@ -87,7 +70,5 @@ export const experience = [
       "Laser-cut and prepared sample swatches for investor marketing packages using CAD.",
     ],
     tools: ["Materials Testing", "CAD", "3D Printing", "Product Design"],
-    logo: LingroveLogo,
-    color: "#10B981", // Green (sustainability/wood theme)
   },
 ];
