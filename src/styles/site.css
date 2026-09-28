@@ -183,13 +183,15 @@ main:focus { outline: none; }
 .skill-list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 36px; list-style: none; }
 .skill {
   display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
-  padding-block: 14px;
+  padding-block: 11px;
   border-bottom: 1px solid var(--line);
   text-decoration: none;
 }
-.skill-name { font-size: clamp(19px, 1.8vw, 22px); font-weight: 700; letter-spacing: -0.02em; transition: color var(--ease); }
+.skill-name { font-size: 17px; font-weight: 600; letter-spacing: -0.01em; transition: color var(--ease); }
 .skill-project { flex: none; color: var(--ink-3); font-size: 13px; transition: color var(--ease); }
-.skill:hover .skill-name, .skill:hover .skill-project { color: var(--teal); }
+.skill { transition: border-color var(--ease); }
+.skill:hover { border-color: var(--coral); }
+.skill:hover .skill-name, .skill:hover .skill-project { color: var(--coral); }
 
 /* Category filter: plain text buttons, underline marks the active one */
 .filters { display: flex; flex-wrap: wrap; gap: 8px 26px; margin: -14px 0 clamp(36px, 4vw, 48px); }

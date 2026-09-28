@@ -68,7 +68,7 @@ export const projects = [
     link: "https://neurobionics.github.io/RPi_CM5_Interface_Board_Site/",
     linkLabel: "Full documentation site",
     external: true, // card opens the project site directly
-    date: "May 2025 - Current",
+    date: "May 2025 - May 2026",
   },
   {
     slug: "rock-talk",
@@ -200,7 +200,7 @@ export const projects = [
     link: "https://anujtaosf.github.io/shortbot_among_us/",
     linkLabel: "Full project site",
     external: true, // card opens the project site directly
-    date: "Jan 2025 - Apr 2025",
+    date: "Jan 2025 - Jan 2026",
   },
   {
     slug: "lostandfound",
@@ -325,7 +325,7 @@ export const projects = [
     role: "President",
     motivation: "Spreading renewable energy education to under-resourced communities",
     stage:
-      "Designing the final prototype of a wind turbine to be installed and integrated into Pleasant Lake Elementary School",
+      "The final prototype of the wind turbine was installed on the roof of Pleasant Lake Elementary School in May of 2026. The installation ran smoothly, over the course of just one day. Over 100 kids cheered from the playground as the turbine blades made their first rotations.",
     date: "Jan 2023 - May 2024",
   },
   {

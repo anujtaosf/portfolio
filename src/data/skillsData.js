@@ -7,7 +7,7 @@ export const skills = [
   { label: "Motor Control", slug: "ball-bot" },
   { label: "Embedded Systems", slug: "automatic-pin-art" },
   { label: "Circuit Design", slug: "emg-car" },
-  { label: "CAD", slug: "short-bot" },
+  { label: "CAD", slug: "rock-talk" },
   { label: "Fabrication", slug: "bluetooth-speaker" },
   { label: "UI/UX Design", slug: "lostandfound" },
 ];
