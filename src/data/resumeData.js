@@ -2,7 +2,7 @@
 import { experience as allExperience } from "./experienceData";
 
 export const summary =
-  "Hands-on robotics systems engineer skilled in PCB design, sensor integration, and hardware debugging. Seeking to invent and refine novel electro-mechanical devices, drawing on my background in robotics, motors and system integration.";
+  "Hands-on robotics engineer skilled in PCB design, sensor integration, motor characterization and hardware debugging. Seeking to invent and refine novel electro-mechanical devices, drawing on my background in designing powered prosthetics and wearable robotic systems.";
 
 export const education = [
   {
@@ -24,7 +24,8 @@ const pdfExperience = [
     title: "Robotics Systems Intern",
     dates: "June 2026 – Current",
     points: [
-      "Prototyped hardware-in-the-loop (HIL) test system to diagnose noisy sensors and verify electrical connections, and wrote a Python script to calibrate BLDC motor torque across speed and current limits for motor control testing.",
+      "Designed and prototyped a mechanical fixture for a hardware-in-the-loop (HIL) test system, with pogo pins for automated voltage checks and a Python GUI for sensor diagnostics and logging.",
+      "Characterized a BLDC motor across speed and current limits using a reaction wheel with similar inertia to the device, calculating torque from angular acceleration to derive the motor's torque constant for accurate control.",
       "Designed BMS connector board to charge and discharge batteries in Altium, collaborating with firmware, electrical, and mechanical teams to define interfaces and meet system requirements.",
       "Diagnosed an IMU gyroscope failure across firmware, electrical, and mechanical subsystems by designing targeted validation tests to determine high-frequency mechanical resonance as the root cause.",
     ],
@@ -77,20 +78,20 @@ export const experience = [...pdfExperience, ...otherExperience].sort(
 
 export const projects = [
   {
-    org: "Tool Tracking Application",
-    detail: "Figma, React, Firebase",
-    dates: "March 2025 – December 2026",
+    org: "Woven Wind",
+    detail: "Project Management, Problem Solving, CAD, Microcontrollers",
+    dates: "January 2023 – May 2026",
     points: [
-      "Developed an interactive application for students and faculty to borrow and return tools using their school credentials.",
-      "Designed the dashboard from the ground up, creating wireframes in Figma, pitching the concept to makerspace leadership, and refining the system through user feedback before full implementation.",
+      "Led the design and deployment of small-scale wind turbines to provide clean energy to under-resourced elementary schools while integrating hands-on renewable energy education into their curriculum.",
     ],
   },
   {
-    org: "Woven Wind",
-    detail: "Project Management, Problem Solving, CAD, Microcontrollers",
-    dates: "January 2023 – May 2025",
+    org: "Tool Tracking Application",
+    detail: "User-centered Design, Figma, React, Firebase",
+    dates: "March 2025 – December 2025",
     points: [
-      "Led the design and deployment of small-scale wind turbines to provide clean energy to under-resourced elementary schools while integrating hands-on renewable energy education into their curriculum.",
+      "Developed a full-stack application for students and faculty to borrow and return tools in makerspace.",
+      "Designed the dashboard from the ground up, creating wireframes in Figma, pitching the concept to makerspace leadership, and refining the system through user feedback before full implementation.",
     ],
   },
   {

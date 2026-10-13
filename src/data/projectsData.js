@@ -326,7 +326,7 @@ export const projects = [
     motivation: "Spreading renewable energy education to under-resourced communities",
     stage:
       "The final prototype of the wind turbine was installed on the roof of Pleasant Lake Elementary School in May of 2026. The installation ran smoothly, over the course of just one day. Over 100 kids cheered from the playground as the turbine blades made their first rotations.",
-    date: "Jan 2023 - May 2024",
+    date: "Jan 2023 - May 2026",
   },
   {
     slug: "ball-bot",
